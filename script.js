@@ -1,6 +1,5 @@
 // ========================================
-// MSK ELECTRICIAN WEBSITE
-// MAIN JAVASCRIPT
+// MSK ELECTRICIAN - SCRIPT
 // ========================================
 
 
@@ -18,8 +17,10 @@ if ("IntersectionObserver" in window) {
             entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
+
                     entry.target.style.opacity = "1";
                     entry.target.style.transform = "translateY(0)";
+
                 }
 
             });
@@ -34,7 +35,8 @@ if ("IntersectionObserver" in window) {
 
         card.style.opacity = "0";
         card.style.transform = "translateY(30px)";
-        card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        card.style.transition =
+            "opacity 0.6s ease, transform 0.6s ease";
 
         observer.observe(card);
 
@@ -42,10 +44,11 @@ if ("IntersectionObserver" in window) {
 
 } else {
 
-    // Fallback for older browsers
     cards.forEach((card) => {
+
         card.style.opacity = "1";
         card.style.transform = "translateY(0)";
+
     });
 
 }
@@ -55,234 +58,233 @@ if ("IntersectionObserver" in window) {
 // STAR RATING
 // ========================================
 
-const ratingButtons = document.querySelectorAll(
-    ".rating-stars button"
-);
+document.addEventListener("DOMContentLoaded", function () {
 
-const ratingInput = document.getElementById("rating");
-const ratingText = document.getElementById("rating-text");
+    const stars = document.querySelectorAll(
+        ".rating-stars button"
+    );
 
-let selectedRating = 0;
+    const ratingInput = document.getElementById("rating");
 
+    const ratingText = document.getElementById(
+        "rating-text"
+    );
 
-// Rating descriptions
-const ratingMessages = {
-    1: "We appreciate your honesty.",
-    2: "Thank you for your feedback.",
-    3: "Thank you for sharing your experience.",
-    4: "We're glad you had a good experience.",
-    5: "Thank you — we're glad you were happy with the service."
-};
+    console.log("Stars found:", stars.length);
 
 
-// Make sure the stars actually work
-ratingButtons.forEach((button) => {
+    // ------------------------------------
+    // CLICK STAR
+    // ------------------------------------
 
-    button.addEventListener("click", function () {
+    stars.forEach(function (star) {
 
-        const rating = Number(this.dataset.rating);
+        star.addEventListener("click", function (event) {
 
-        selectedRating = rating;
+            event.preventDefault();
 
-        // Save rating in hidden input
-        if (ratingInput) {
-            ratingInput.value = rating;
-        }
+            const rating = parseInt(
+                this.getAttribute("data-rating")
+            );
 
-        // Update star appearance
-        ratingButtons.forEach((star) => {
+            console.log("Selected rating:", rating);
 
-            const starRating = Number(star.dataset.rating);
 
-            if (starRating <= rating) {
-                star.classList.add("active");
-            } else {
-                star.classList.remove("active");
+            // Save rating
+            if (ratingInput) {
+                ratingInput.value = rating;
+            }
+
+
+            // Highlight stars
+            stars.forEach(function (singleStar) {
+
+                const singleRating = parseInt(
+                    singleStar.getAttribute("data-rating")
+                );
+
+                if (singleRating <= rating) {
+
+                    singleStar.classList.add("active");
+
+                } else {
+
+                    singleStar.classList.remove("active");
+
+                }
+
+            });
+
+
+            // Rating message
+            if (ratingText) {
+
+                if (rating === 1) {
+                    ratingText.textContent =
+                        "Thank you for your honest feedback.";
+                }
+
+                else if (rating === 2) {
+                    ratingText.textContent =
+                        "Thank you for sharing your experience.";
+                }
+
+                else if (rating === 3) {
+                    ratingText.textContent =
+                        "Thank you for sharing your experience with us.";
+                }
+
+                else if (rating === 4) {
+                    ratingText.textContent =
+                        "We're glad you had a good experience.";
+                }
+
+                else if (rating === 5) {
+                    ratingText.textContent =
+                        "We're glad you were happy with our service.";
+                }
+
             }
 
         });
 
-        // Update text
-        if (ratingText) {
-            ratingText.textContent = ratingMessages[rating];
-        }
 
-    });
+        // ------------------------------------
+        // HOVER
+        // ------------------------------------
 
+        star.addEventListener("mouseenter", function () {
 
-    // Hover effect
-    button.addEventListener("mouseenter", function () {
+            const hoverRating = parseInt(
+                this.getAttribute("data-rating")
+            );
 
-        const hoverRating = Number(this.dataset.rating);
+            stars.forEach(function (singleStar) {
 
-        ratingButtons.forEach((star) => {
+                const singleRating = parseInt(
+                    singleStar.getAttribute("data-rating")
+                );
 
-            const starRating = Number(star.dataset.rating);
+                if (singleRating <= hoverRating) {
 
-            if (starRating <= hoverRating) {
-                star.style.color = "#f5b400";
-            } else {
-                star.style.color = "#d7d7d7";
-            }
+                    singleStar.classList.add("hover");
+
+                } else {
+
+                    singleStar.classList.remove("hover");
+
+                }
+
+            });
 
         });
 
     });
+
+
+    // ------------------------------------
+    // REMOVE HOVER
+    // ------------------------------------
+
+    const starContainer = document.querySelector(
+        ".rating-stars"
+    );
+
+    if (starContainer) {
+
+        starContainer.addEventListener(
+            "mouseleave",
+            function () {
+
+                stars.forEach(function (star) {
+
+                    star.classList.remove("hover");
+
+                });
+
+            }
+        );
+
+    }
 
 });
-
-
-// Return to selected rating after mouse leaves
-const ratingContainer = document.querySelector(".rating-stars");
-
-if (ratingContainer) {
-
-    ratingContainer.addEventListener("mouseleave", function () {
-
-        ratingButtons.forEach((star) => {
-
-            const starRating = Number(star.dataset.rating);
-
-            if (starRating <= selectedRating) {
-                star.style.color = "#f5b400";
-            } else {
-                star.style.color = "#d7d7d7";
-            }
-
-        });
-
-    });
-
-}
 
 
 // ========================================
 // REVIEW FORM
 // ========================================
 
-const reviewForm = document.getElementById("review-form");
-const reviewSuccess = document.getElementById("review-success");
+const reviewForm = document.getElementById(
+    "review-form"
+);
 
 if (reviewForm) {
 
-    reviewForm.addEventListener("submit", function (event) {
-
-        // Stop the page from refreshing
-        event.preventDefault();
-
-        const nameInput = document.getElementById("review-name");
-        const feedbackInput = document.getElementById("review-feedback");
-
-        const name = nameInput ? nameInput.value.trim() : "";
-        const feedback = feedbackInput
-            ? feedbackInput.value.trim()
-            : "";
-
-        // Check rating
-        if (selectedRating === 0) {
-
-            if (ratingText) {
-                ratingText.textContent =
-                    "Please select a rating before submitting.";
-                ratingText.style.color = "#c0392b";
-            }
-
-            return;
-        }
-
-        // Check feedback
-        if (feedback === "") {
-
-            if (feedbackInput) {
-                feedbackInput.focus();
-            }
-
-            return;
-        }
-
-        // ========================================
-        // SUCCESS MESSAGE
-        // ========================================
-
-        if (reviewSuccess) {
-
-            reviewSuccess.style.display = "block";
-
-            reviewSuccess.innerHTML =
-                "Thank you for taking the time to share your experience with us.";
-
-        }
-
-        // Hide form fields after successful submission
-        if (nameInput) {
-            nameInput.value = "";
-        }
-
-        if (feedbackInput) {
-            feedbackInput.value = "";
-        }
-
-        // Reset stars
-        selectedRating = 0;
-
-        if (ratingInput) {
-            ratingInput.value = "";
-        }
-
-        ratingButtons.forEach((star) => {
-
-            star.classList.remove("active");
-            star.style.color = "#d7d7d7";
-
-        });
-
-        if (ratingText) {
-            ratingText.textContent =
-                "Thank you for your feedback.";
-            ratingText.style.color = "#777777";
-        }
-
-    });
-
-}
-
-
-// ========================================
-// SMOOTH NAVIGATION
-// ========================================
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-        if (!targetId || targetId === "#") {
-            return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
+    reviewForm.addEventListener(
+        "submit",
+        function (event) {
 
             event.preventDefault();
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            const ratingInput =
+                document.getElementById("rating");
+
+            const ratingText =
+                document.getElementById("rating-text");
+
+            const feedback =
+                document.getElementById("review-feedback");
+
+            const success =
+                document.getElementById("review-success");
+
+
+            // No rating selected
+            if (
+                !ratingInput ||
+                ratingInput.value === ""
+            ) {
+
+                if (ratingText) {
+
+                    ratingText.textContent =
+                        "Please select a rating first.";
+
+                    ratingText.style.color =
+                        "#c0392b";
+
+                }
+
+                return;
+
+            }
+
+
+            // No feedback
+            if (
+                !feedback ||
+                feedback.value.trim() === ""
+            ) {
+
+                feedback.focus();
+
+                return;
+
+            }
+
+
+            // Success
+            if (success) {
+
+                success.style.display = "block";
+
+                success.textContent =
+                    "Thank you for taking the time to share your experience with us.";
+
+            }
 
         }
+    );
 
-    });
-
-});
-
-
-// ========================================
-// CONSOLE CHECK
-// ========================================
-
-console.log("MSK Electrician website loaded successfully.");
-console.log("Star rating system ready.");
+}
 ```
