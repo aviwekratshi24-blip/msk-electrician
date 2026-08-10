@@ -1,33 +1,27 @@
-// ========================================
-// MSK ELECTRICIAN - REVIEW SYSTEM
-// ========================================
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================
-    // STAR RATING
-    // ========================================
+    /* =========================
+       STAR RATING
+    ========================= */
 
     const stars = document.querySelectorAll(".rating-stars button");
     const ratingInput = document.querySelector("#rating");
 
-    stars.forEach((star, index) => {
+    stars.forEach(function (star, index) {
 
-        star.addEventListener("click", function (event) {
+        star.addEventListener("click", function (e) {
 
-            event.preventDefault();
+            e.preventDefault();
 
-            const selectedRating = index + 1;
+            const rating = index + 1;
 
-            // Save rating
             if (ratingInput) {
-                ratingInput.value = selectedRating;
+                ratingInput.value = rating;
             }
 
-            // Update stars
-            stars.forEach((item, starIndex) => {
+            stars.forEach(function (item, i) {
 
-                if (starIndex < selectedRating) {
+                if (i <= index) {
                     item.classList.add("active");
                 } else {
                     item.classList.remove("active");
@@ -40,73 +34,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ========================================
-    // REVIEW FORM
-    // ========================================
+    /* =========================
+       FEEDBACK FORM
+    ========================= */
 
-    const reviewForm = document.querySelector("#review-form");
+    const form = document.querySelector("#review-form");
 
-    if (reviewForm) {
+    if (form) {
 
-        reviewForm.addEventListener("submit", function (event) {
+        form.addEventListener("submit", function (e) {
 
-            event.preventDefault();
+            e.preventDefault();
 
-            const nameInput = document.querySelector("#review-name");
-            const feedbackInput = document.querySelector("#review-feedback");
+            const feedback = document.querySelector("#review-feedback");
+            const name = document.querySelector("#review-name");
 
-            const name = nameInput ? nameInput.value.trim() : "";
-            const feedback = feedbackInput ? feedbackInput.value.trim() : "";
-            const rating = ratingInput ? ratingInput.value : "";
+            const rating = ratingInput
+                ? ratingInput.value
+                : "";
 
-            // Check rating
+            const feedbackText = feedback
+                ? feedback.value.trim()
+                : "";
+
             if (!rating) {
-
-                alert("Please select a star rating before submitting.");
-
+                alert("Please select a star rating.");
                 return;
-
             }
 
-            // Check feedback
-            if (!feedback) {
-
-                alert("Please tell us about your experience.");
-
+            if (!feedbackText) {
+                alert("Please share your experience.");
                 return;
-
             }
 
-            // ========================================
-            // SUCCESS MESSAGE
-            // ========================================
-
-            const successMessage = document.querySelector(
-                "#review-success"
+            alert(
+                "Thank you" +
+                (name && name.value
+                    ? " " + name.value
+                    : "") +
+                "! Your feedback has been received."
             );
 
-            if (successMessage) {
+            form.reset();
 
-                successMessage.textContent =
-                    "Thank you for sharing your experience with us.";
-
-                successMessage.style.display = "block";
-
-            } else {
-
-                alert(
-                    "Thank you" +
-                    (name ? " " + name : "") +
-                    "! Your feedback has been received."
-                );
-
-            }
-
-            // Reset form
-            reviewForm.reset();
-
-            // Reset stars
-            stars.forEach((star) => {
+            stars.forEach(function (star) {
                 star.classList.remove("active");
             });
 
@@ -119,13 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ========================================
-    // SERVICE CARD ANIMATION
-    // ========================================
+    /* =========================
+       SERVICE CARD ANIMATION
+    ========================= */
 
-    const revealElements = document.querySelectorAll(
-        ".service-card, .review-card, .review-heading, .review-form"
-    );
+    const cards = document.querySelectorAll(".service-card");
 
     const observer = new IntersectionObserver(
         function (entries) {
@@ -134,7 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
 
                     observer.unobserve(entry.target);
 
@@ -149,11 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    revealElements.forEach(function (element) {
+    cards.forEach(function (card) {
 
-        element.classList.add("reveal");
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "0.6s ease";
 
-        observer.observe(element);
+        observer.observe(card);
 
     });
 
