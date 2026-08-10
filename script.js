@@ -94,7 +94,6 @@ if (reviewForm) {
                 );
 
 
-            // Check name
             if (
                 !name ||
                 name.value.trim() === ""
@@ -107,7 +106,6 @@ if (reviewForm) {
             }
 
 
-            // Check feedback
             if (
                 !feedback ||
                 feedback.value.trim() === ""
@@ -120,7 +118,6 @@ if (reviewForm) {
             }
 
 
-            // Show success message
             if (success) {
 
                 success.style.display = "block";
@@ -136,11 +133,6 @@ if (reviewForm) {
 }
 
 
-// ========================================
-// WEBSITE LOADED
-// ========================================
-
 console.log(
     "MSK Electrician website loaded successfully."
 );
-```
