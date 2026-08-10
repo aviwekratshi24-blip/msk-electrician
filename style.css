@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +21,7 @@ body {
 
 
 /* =========================
-NAVIGATION
+   NAVIGATION
 ========================= */
 
 header {
@@ -74,7 +78,7 @@ header {
 
 
 /* =========================
-HERO
+   HERO
 ========================= */
 
 .hero {
@@ -165,7 +169,7 @@ HERO
 
 
 /* =========================
-HERO LOGO
+   HERO LOGO
 ========================= */
 
 .hero-logo {
@@ -189,7 +193,7 @@ HERO LOGO
 
 
 /* =========================
-ABOUT
+   ABOUT
 ========================= */
 
 .about {
@@ -229,6 +233,7 @@ ABOUT
 
 .features {
     margin-top: 30px;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -247,7 +252,7 @@ ABOUT
 
 
 /* =========================
-SERVICES
+   SERVICES
 ========================= */
 
 .services {
@@ -261,10 +266,16 @@ SERVICES
     text-align: center;
 }
 
+.section-heading h1,
 .section-heading h2 {
     font-size: 45px;
     line-height: 1.1;
     margin-bottom: 20px;
+}
+
+.section-heading h1 span,
+.section-heading h2 span {
+    color: #f5b400;
 }
 
 .section-heading > p:last-child {
@@ -293,7 +304,7 @@ SERVICES
 }
 
 .service-card:hover {
-    transform: translateY(-5px) !important;
+    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -313,10 +324,11 @@ SERVICES
 
 
 /* =========================
-SERVICE BUTTON
+   SERVICE BUTTON
 ========================= */
 
-.service-button {
+.service-button,
+.service-link-button {
     display: inline-block;
 
     margin-top: 22px;
@@ -336,16 +348,21 @@ SERVICE BUTTON
     transition: 0.25s ease;
 }
 
-.service-button:hover {
+.service-button:hover,
+.service-link-button:hover {
     background: #f5b400;
     color: #111111;
-
     transform: translateY(-2px);
+}
+
+.service-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 
 /* =========================
-WHY US
+   WHY US
 ========================= */
 
 .why-us {
@@ -385,7 +402,7 @@ WHY US
 
 
 /* =========================
-EXPERIENCE
+   EXPERIENCE
 ========================= */
 
 .experience {
@@ -412,7 +429,7 @@ EXPERIENCE
 
 
 /* =========================
-EXPERIENCE LAYOUT
+   EXPERIENCE LAYOUT
 ========================= */
 
 .experience-layout {
@@ -432,7 +449,7 @@ EXPERIENCE LAYOUT
 
 
 /* =========================
-LEFT SIDE
+   EXPERIENCE LEFT SIDE
 ========================= */
 
 .experience-info {
@@ -489,7 +506,7 @@ LEFT SIDE
 
 
 /* =========================
-FORM
+   REVIEW FORM
 ========================= */
 
 .review-form-container {
@@ -551,7 +568,7 @@ FORM
 
 
 /* =========================
-STAR RATING
+   STAR RATING
 ========================= */
 
 .rating-stars {
@@ -603,7 +620,7 @@ STAR RATING
 
 
 /* =========================
-SUBMIT BUTTON
+   REVIEW SUBMIT
 ========================= */
 
 .review-submit {
@@ -647,7 +664,7 @@ SUBMIT BUTTON
 
 
 /* =========================
-SUCCESS MESSAGE
+   SUCCESS MESSAGE
 ========================= */
 
 .review-success {
@@ -671,7 +688,7 @@ SUCCESS MESSAGE
 
 
 /* =========================
-CONTACT
+   CONTACT
 ========================= */
 
 .contact {
@@ -698,6 +715,7 @@ CONTACT
 
 .contact-buttons {
     margin-top: 30px;
+
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
@@ -707,9 +725,12 @@ CONTACT
     text-decoration: none;
     background: #f5b400;
     color: #111111;
+
     padding: 14px 25px;
     border-radius: 5px;
+
     font-weight: 700;
+
     transition: 0.25s ease;
 }
 
@@ -750,7 +771,7 @@ CONTACT
 
 
 /* =========================
-FOOTER
+   FOOTER
 ========================= */
 
 footer {
@@ -771,9 +792,377 @@ footer p {
 }
 
 
+/* =========================================================
+   SERVICE DETAIL PAGES
+   Used by residential.html, commercial.html,
+   lighting.html, repairs.html, db-board.html,
+   and plugs-switches.html
+========================================================= */
+
+.service-page {
+    background: #ffffff;
+}
+
+
 /* =========================
-TABLET
+   SERVICE HERO
 ========================= */
+
+.service-page-hero {
+    background: #111111;
+    color: #ffffff;
+
+    min-height: 500px;
+
+    padding: 80px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-heading {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.service-page-icon {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 25px;
+
+    background: #f5b400;
+    color: #111111;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+}
+
+.service-page-heading .section-label {
+    margin-bottom: 15px;
+}
+
+.service-page-heading h1 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.service-page-heading h1 span {
+    color: #f5b400;
+}
+
+.service-page-heading > p:last-child {
+    max-width: 700px;
+    margin: auto;
+
+    color: #cccccc;
+    font-size: 18px;
+}
+
+
+/* =========================
+   SERVICE INTRO
+========================= */
+
+.service-page-content {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+
+    align-items: center;
+}
+
+.service-detail-content {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+.service-detail-content h2,
+.service-description h2 {
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.service-detail-content h2 span,
+.service-description h2 span {
+    color: #f5b400;
+}
+
+.service-detail-content > p:not(.section-label),
+.service-description > p:not(.section-label) {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.service-page-content > p {
+    color: #666666;
+}
+
+.service-page-content h1 {
+    font-size: 50px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.service-page-content h1 span {
+    color: #f5b400;
+}
+
+.service-page-content .primary-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   SERVICE DESCRIPTION
+========================= */
+
+.service-description {
+    max-width: 650px;
+}
+
+
+/* =========================
+   SERVICE PHOTO PLACEHOLDER
+========================= */
+
+.service-photo-placeholder {
+    min-height: 350px;
+
+    background: #f7f7f7;
+    border: 2px dashed #dddddd;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777777;
+}
+
+.service-photo-placeholder span {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.service-photo-placeholder p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #444444;
+}
+
+.service-photo-placeholder small {
+    margin-top: 8px;
+    color: #999999;
+}
+
+
+/* =========================
+   SERVICE JOBS
+========================= */
+
+.service-jobs {
+    background: #f7f7f7;
+    padding: 100px 30px;
+}
+
+.service-jobs-grid,
+.jobs-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-job-card,
+.job-item {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+    padding: 30px;
+
+    transition: 0.25s ease;
+}
+
+.service-job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-job-icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.service-job-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.service-job-card p {
+    color: #666666;
+}
+
+.job-item {
+    font-weight: 700;
+    color: #222222;
+}
+
+
+/* =========================
+   SERVICE PHOTO GALLERY
+========================= */
+
+.service-photo-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    padding: 0 30px 100px;
+}
+
+.service-photo-grid .service-photo-placeholder {
+    min-height: 260px;
+}
+
+
+/* =========================
+   BEFORE & AFTER
+========================= */
+
+.before-after-section {
+    background: #f7f7f7;
+    padding: 100px 30px;
+}
+
+.before-after-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.before-after-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid #eeeeee;
+}
+
+.before-placeholder,
+.after-placeholder,
+.before-photo,
+.after-photo {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    text-align: center;
+}
+
+.before-placeholder,
+.before-photo {
+    background: #eeeeee;
+}
+
+.after-placeholder,
+.after-photo {
+    background: #f5f5f5;
+}
+
+.before-placeholder span,
+.after-placeholder span,
+.before-photo,
+.after-photo {
+    font-size: 40px;
+}
+
+.before-placeholder strong,
+.after-placeholder strong {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   SERVICE CTA
+========================= */
+
+.service-page-quote {
+    background: #111111;
+    color: #ffffff;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.service-page-quote h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.service-page-quote h2 span {
+    color: #f5b400;
+}
+
+.service-page-quote > p:not(.section-label) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+
+    color: #cccccc;
+}
+
+.service-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -792,6 +1181,7 @@ TABLET
         padding: 10px 15px;
     }
 
+
     .hero {
         padding: 70px 25px;
     }
@@ -806,30 +1196,50 @@ TABLET
         height: 300px;
     }
 
+
     .about,
     .why-us,
     .contact {
         grid-template-columns: 1fr;
     }
 
+
     .service-grid {
         grid-template-columns: 1fr 1fr;
     }
+
 
     .why-grid {
         grid-template-columns: 1fr;
     }
 
+
     .experience-layout {
         grid-template-columns: 1fr;
+    }
+
+
+    .service-page-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .service-jobs-grid,
+    .jobs-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .service-photo-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
 }
 
 
-/* =========================
-MOBILE
-========================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 650px) {
 
@@ -842,6 +1252,7 @@ MOBILE
     .nav-button {
         display: none;
     }
+
 
     .hero {
         min-height: auto;
@@ -858,6 +1269,7 @@ MOBILE
         justify-content: center;
     }
 
+
     .hero-logo {
         width: 300px;
         height: 300px;
@@ -867,6 +1279,7 @@ MOBILE
         width: 280px;
         height: 300px;
     }
+
 
     .about,
     .services,
@@ -879,33 +1292,42 @@ MOBILE
         padding: 70px 20px;
     }
 
+
     .about h2,
+    .section-heading h1,
     .section-heading h2,
     .contact h2,
     .why-us h2,
-    .experience-heading h2 {
+    .experience-heading h2,
+    .service-page-quote h2 {
         font-size: 36px;
     }
+
 
     .service-grid {
         grid-template-columns: 1fr;
     }
 
+
     .features {
         grid-template-columns: 1fr;
     }
+
 
     .experience-layout {
         border-radius: 12px;
     }
 
+
     .experience-info {
         padding: 40px 25px;
     }
 
+
     .review-form-container {
         padding: 35px 25px;
     }
+
 
     .rating-stars {
         gap: 2px;
@@ -913,6 +1335,66 @@ MOBILE
 
     .rating-star {
         font-size: 34px;
+    }
+
+
+    /* SERVICE PAGES */
+
+    .service-page-hero {
+        min-height: 430px;
+        padding: 60px 20px;
+    }
+
+    .service-page-heading h1 {
+        font-size: 42px;
+    }
+
+    .service-page-content,
+    .service-detail-content {
+        padding: 70px 20px;
+    }
+
+    .service-page-content h1,
+    .service-detail-content h2,
+    .service-description h2 {
+        font-size: 36px;
+    }
+
+    .service-photo-placeholder {
+        min-height: 280px;
+    }
+
+    .service-jobs {
+        padding: 70px 20px;
+    }
+
+    .service-jobs-grid,
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-photo-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px 70px;
+    }
+
+    .before-after-section {
+        padding: 70px 20px;
+    }
+
+    .before-after-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .before-placeholder,
+    .after-placeholder,
+    .before-photo,
+    .after-photo {
+        min-height: 250px;
+    }
+
+    .service-page-quote {
+        padding: 70px 20px;
     }
 
 }
