@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,12 +24,11 @@
 <header>
     <nav class="navbar">
 
-        <!-- No logo here -->
-
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
         </div>
 
@@ -46,9 +45,6 @@
 
 <section id="home" class="hero">
 
-
-    <!-- MSK LOGO ABOVE THE TEXT -->
-
     <div class="hero-logo">
 
         <img
@@ -57,9 +53,6 @@
 
     </div>
 
-
-
-    <!-- HERO CONTENT -->
 
     <div class="hero-content">
 
@@ -180,87 +173,163 @@
     <div class="service-grid">
 
         <div class="service-card">
-
             <div class="service-icon">🏠</div>
-
             <h3>Residential Electrical</h3>
-
             <p>
                 Electrical installations, repairs and upgrades
                 for homes and residential properties.
             </p>
-
         </div>
 
 
         <div class="service-card">
-
             <div class="service-icon">🏢</div>
-
             <h3>Commercial Electrical</h3>
-
             <p>
                 Electrical solutions for offices, shops,
                 businesses and commercial properties.
             </p>
-
         </div>
 
 
         <div class="service-card">
-
             <div class="service-icon">💡</div>
-
             <h3>Lighting Installation</h3>
-
             <p>
                 Indoor and outdoor lighting installation,
                 upgrades and repairs.
             </p>
-
         </div>
 
 
         <div class="service-card">
-
             <div class="service-icon">🔧</div>
-
             <h3>Electrical Repairs</h3>
-
             <p>
                 Troubleshooting and repair of electrical
                 faults and problems.
             </p>
-
         </div>
 
 
         <div class="service-card">
-
             <div class="service-icon">⚡</div>
-
             <h3>DB Board Services</h3>
-
             <p>
                 DB board installations, upgrades and
                 electrical fault assistance.
             </p>
-
         </div>
 
 
         <div class="service-card">
-
             <div class="service-icon">🔌</div>
-
             <h3>Plugs & Switches</h3>
-
             <p>
                 Installation and replacement of plugs,
                 switches and electrical accessories.
             </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CUSTOMER REVIEWS -->
+
+<section id="reviews" class="reviews">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            CUSTOMER REVIEWS
+        </p>
+
+        <h2>
+            What our <span>customers say.</span>
+        </h2>
+
+        <p>
+            Your feedback helps us improve and helps other customers
+            choose a reliable electrician.
+        </p>
+
+    </div>
+
+
+    <!-- SAMPLE REVIEWS -->
+
+    <div class="review-grid">
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Excellent service. Very professional and the work
+                was completed properly."
+            </p>
+
+            <strong>
+                — MSK Customer
+            </strong>
 
         </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Arrived on time and fixed the electrical problem
+                quickly. Very happy with the service."
+            </p>
+
+            <strong>
+                — MSK Customer
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Professional work and good communication from
+                start to finish."
+            </p>
+
+            <strong>
+                — MSK Customer
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- REVIEW BUTTONS -->
+
+    <div class="review-actions">
+
+        <a href="#leave-review" class="review-button">
+            ⭐ Leave a Review
+        </a>
+
+        <a href="#feedback" class="feedback-button">
+            🛠️ Send Feedback / Complaint
+        </a>
 
     </div>
 
@@ -328,6 +397,131 @@
         </div>
 
     </div>
+
+</section>
+
+
+
+<!-- LEAVE A REVIEW -->
+
+<section id="leave-review" class="review-form-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            YOUR EXPERIENCE
+        </p>
+
+        <h2>
+            Leave us a <span>review.</span>
+        </h2>
+
+        <p>
+            Tell us about your experience with MSK Electrician.
+        </p>
+
+    </div>
+
+
+    <form class="review-form">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+        <select required>
+
+            <option value="">
+                Choose your rating
+            </option>
+
+            <option value="5">
+                ★★★★★ Excellent
+            </option>
+
+            <option value="4">
+                ★★★★ Very Good
+            </option>
+
+            <option value="3">
+                ★★★ Average
+            </option>
+
+            <option value="2">
+                ★★ Needs Improvement
+            </option>
+
+            <option value="1">
+                ★ Poor
+            </option>
+
+        </select>
+
+
+        <textarea
+            placeholder="Tell us about the job we did..."
+            rows="6"
+            required></textarea>
+
+
+        <button type="submit">
+            Submit Review
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- FEEDBACK / COMPLAINT -->
+
+<section id="feedback" class="feedback-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            WE WANT TO IMPROVE
+        </p>
+
+        <h2>
+            Something went <span>wrong?</span>
+        </h2>
+
+        <p>
+            We take customer feedback seriously. Tell us what
+            happened so we can improve our service.
+        </p>
+
+    </div>
+
+
+    <form class="feedback-form">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+
+        <textarea
+            placeholder="Tell us what happened..."
+            rows="6"
+            required></textarea>
+
+
+        <button type="submit">
+            Send Feedback
+        </button>
+
+    </form>
 
 </section>
 
@@ -433,7 +627,6 @@
     </p>
 
 </footer>
-
 
 
 <script src="script.js"></script>
