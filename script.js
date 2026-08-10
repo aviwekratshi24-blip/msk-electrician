@@ -9,6 +9,7 @@
 
 const cards = document.querySelectorAll(".service-card");
 
+
 if ("IntersectionObserver" in window) {
 
     const observer = new IntersectionObserver(
@@ -19,7 +20,9 @@ if ("IntersectionObserver" in window) {
                 if (entry.isIntersecting) {
 
                     entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
 
                 }
 
@@ -31,10 +34,14 @@ if ("IntersectionObserver" in window) {
         }
     );
 
+
     cards.forEach((card) => {
 
         card.style.opacity = "0";
-        card.style.transform = "translateY(30px)";
+
+        card.style.transform =
+            "translateY(30px)";
+
         card.style.transition =
             "opacity 0.6s ease, transform 0.6s ease";
 
@@ -47,7 +54,9 @@ if ("IntersectionObserver" in window) {
     cards.forEach((card) => {
 
         card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
+
+        card.style.transform =
+            "translateY(0)";
 
     });
 
@@ -55,177 +64,24 @@ if ("IntersectionObserver" in window) {
 
 
 // ========================================
-// STAR RATING
+// FEEDBACK FORM
 // ========================================
 
-const stars = document.querySelectorAll(
-    ".rating-stars button"
-);
+const reviewForm =
+    document.getElementById("review-form");
 
-const ratingInput = document.getElementById("rating");
-
-const ratingText = document.getElementById(
-    "rating-text"
-);
-
-console.log("MSK: Stars found =", stars.length);
-
-
-// Current selected rating
-let selectedRating = 0;
-
-
-// ----------------------------------------
-// STAR CLICK
-// ----------------------------------------
-
-stars.forEach((star) => {
-
-    star.addEventListener("click", (event) => {
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        selectedRating = Number(
-            star.getAttribute("data-rating")
-        );
-
-        console.log(
-            "MSK: Star clicked =",
-            selectedRating
-        );
-
-
-        // Save rating
-        if (ratingInput) {
-
-            ratingInput.value = selectedRating;
-
-        }
-
-
-        // Highlight selected stars
-        stars.forEach((singleStar) => {
-
-            const number = Number(
-                singleStar.getAttribute("data-rating")
-            );
-
-            if (number <= selectedRating) {
-
-                singleStar.classList.add("active");
-
-            } else {
-
-                singleStar.classList.remove("active");
-
-            }
-
-        });
-
-
-        // Rating message
-        if (ratingText) {
-
-            const messages = {
-
-                1: "Thank you for your honest feedback.",
-
-                2: "Thank you for sharing your experience.",
-
-                3: "Thank you for sharing your experience with us.",
-
-                4: "We're glad you had a good experience.",
-
-                5: "We're glad you were happy with our service."
-
-            };
-
-            ratingText.textContent =
-                messages[selectedRating];
-
-            ratingText.style.color = "#777777";
-
-        }
-
-    });
-
-
-    // ------------------------------------
-    // STAR HOVER
-    // ------------------------------------
-
-    star.addEventListener("mouseenter", () => {
-
-        const hoverRating = Number(
-            star.getAttribute("data-rating")
-        );
-
-        stars.forEach((singleStar) => {
-
-            const number = Number(
-                singleStar.getAttribute("data-rating")
-            );
-
-            if (number <= hoverRating) {
-
-                singleStar.classList.add("hover");
-
-            } else {
-
-                singleStar.classList.remove("hover");
-
-            }
-
-        });
-
-    });
-
-});
-
-
-// ----------------------------------------
-// REMOVE HOVER
-// ----------------------------------------
-
-const starContainer = document.querySelector(
-    ".rating-stars"
-);
-
-if (starContainer) {
-
-    starContainer.addEventListener(
-        "mouseleave",
-        () => {
-
-            stars.forEach((star) => {
-
-                star.classList.remove("hover");
-
-            });
-
-        }
-    );
-
-}
-
-
-// ========================================
-// REVIEW FORM
-// ========================================
-
-const reviewForm = document.getElementById(
-    "review-form"
-);
 
 if (reviewForm) {
 
     reviewForm.addEventListener(
         "submit",
-        (event) => {
+        function (event) {
 
             event.preventDefault();
 
+
+            const name =
+                document.getElementById("review-name");
 
             const feedback =
                 document.getElementById(
@@ -238,31 +94,20 @@ if (reviewForm) {
                 );
 
 
-            // --------------------------------
-            // CHECK RATING
-            // --------------------------------
+            // Check name
+            if (
+                !name ||
+                name.value.trim() === ""
+            ) {
 
-            if (selectedRating === 0) {
-
-                if (ratingText) {
-
-                    ratingText.textContent =
-                        "Please select a rating first.";
-
-                    ratingText.style.color =
-                        "#c0392b";
-
-                }
+                name.focus();
 
                 return;
 
             }
 
 
-            // --------------------------------
-            // CHECK FEEDBACK
-            // --------------------------------
-
+            // Check feedback
             if (
                 !feedback ||
                 feedback.value.trim() === ""
@@ -275,10 +120,7 @@ if (reviewForm) {
             }
 
 
-            // --------------------------------
-            // SUCCESS
-            // --------------------------------
-
+            // Show success message
             if (success) {
 
                 success.style.display = "block";
@@ -299,6 +141,6 @@ if (reviewForm) {
 // ========================================
 
 console.log(
-    "MSK Electrician: script loaded successfully."
+    "MSK Electrician website loaded successfully."
 );
 ```
