@@ -17,7 +17,7 @@ body {
 
 
 /* =========================
-   NAVIGATION
+NAVIGATION
 ========================= */
 
 header {
@@ -74,7 +74,7 @@ header {
 
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero {
@@ -83,16 +83,18 @@ header {
     color: #ffffff;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    padding: 70px max(30px, calc((100% - 1200px) / 2));
-    gap: 50px;
+    padding: 50px 30px;
+    gap: 0;
 }
 
 .hero-content {
     max-width: 650px;
-    flex: 1;
+    width: 100%;
+    text-align: center;
 }
 
 .small-title,
@@ -131,6 +133,7 @@ header {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .primary-button,
@@ -165,23 +168,24 @@ header {
 
 
 /* =========================
-   HERO LOGO
+HERO LOGO
 ========================= */
 
 .hero-logo {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 300px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     flex-shrink: 0;
+    margin-bottom: 20px;
 }
 
 .hero-logo img {
     width: 400px;
-    height: 400px;
+    height: 300px;
 
     object-fit: contain;
     display: block;
@@ -189,7 +193,7 @@ header {
 
 
 /* =========================
-   ABOUT
+ABOUT
 ========================= */
 
 .about {
@@ -247,7 +251,7 @@ header {
 
 
 /* =========================
-   SERVICES
+SERVICES
 ========================= */
 
 .services {
@@ -313,7 +317,7 @@ header {
 
 
 /* =========================
-   WHY US
+WHY US
 ========================= */
 
 .why-us {
@@ -353,7 +357,7 @@ header {
 
 
 /* =========================
-   EXPERIENCE
+EXPERIENCE
 ========================= */
 
 .experience {
@@ -513,7 +517,7 @@ header {
 
 
 /* =========================
-   STAR RATING
+STAR RATING
 ========================= */
 
 .rating-stars {
@@ -565,7 +569,7 @@ header {
 
 
 /* =========================
-   SUBMIT BUTTON
+SUBMIT BUTTON
 ========================= */
 
 .review-submit {
@@ -631,7 +635,7 @@ header {
 
 
 /* =========================
-   CONTACT
+CONTACT
 ========================= */
 
 .contact {
@@ -710,7 +714,7 @@ header {
 
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer {
@@ -732,7 +736,7 @@ footer p {
 
 
 /* =========================
-   TABLET
+TABLET
 ========================= */
 
 @media (max-width: 900px) {
@@ -753,17 +757,17 @@ footer p {
     }
 
     .hero {
-        padding: 70px 25px;
+        padding: 50px 25px;
     }
 
     .hero-logo {
         width: 400px;
-        height: 400px;
+        height: 300px;
     }
 
     .hero-logo img {
-        width: 350px;
-        height: 350px;
+        width: 400px;
+        height: 300px;
     }
 
     .about,
@@ -788,7 +792,7 @@ footer p {
 
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media (max-width: 650px) {
@@ -805,7 +809,7 @@ footer p {
 
     .hero {
         min-height: auto;
-        padding: 60px 20px;
+        padding: 50px 20px;
         flex-direction: column;
         text-align: center;
     }
@@ -819,13 +823,16 @@ footer p {
     }
 
     .hero-logo {
-        width: 300px;
+        width: 100%;
+        max-width: 400px;
         height: 300px;
     }
 
     .hero-logo img {
-        width: 280px;
-        height: 280px;
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
+        object-fit: contain;
     }
 
     .about,
