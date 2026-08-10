@@ -1,4 +1,3 @@
-```javascript
 // ========================================
 // MSK ELECTRICIAN WEBSITE
 // MAIN JAVASCRIPT
