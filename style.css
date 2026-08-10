@@ -20,7 +20,6 @@ body {
 }
 
 
-
 /* ========================================
    NAVIGATION
 ======================================== */
@@ -76,7 +75,6 @@ header {
     background: #f5b400;
     color: #111111;
 }
-
 
 
 /* ========================================
@@ -177,7 +175,6 @@ header {
 }
 
 
-
 /* ========================================
    HERO LOGO
 ======================================== */
@@ -200,7 +197,6 @@ header {
     object-fit: contain;
     display: block;
 }
-
 
 
 /* ========================================
@@ -261,7 +257,6 @@ header {
     color: #f5b400;
     font-size: 20px;
 }
-
 
 
 /* ========================================
@@ -335,7 +330,6 @@ header {
 }
 
 
-
 /* ========================================
    WHY US
 ======================================== */
@@ -347,7 +341,6 @@ header {
     padding: 100px 30px;
 
     display: grid;
-
     grid-template-columns: 0.7fr 1.3fr;
 
     gap: 70px;
@@ -359,7 +352,6 @@ header {
 
 .why-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 30px;
@@ -380,9 +372,8 @@ header {
 }
 
 
-
 /* ========================================
-   EXPERIENCE / REVIEWS
+   EXPERIENCE / FEEDBACK
 ======================================== */
 
 .experience {
@@ -496,9 +487,8 @@ header {
 }
 
 
-
 /* ========================================
-   REVIEW FORM
+   FEEDBACK FORM
 ======================================== */
 
 .review-form-container {
@@ -515,7 +505,7 @@ header {
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
@@ -525,7 +515,7 @@ header {
 
     font-weight: 700;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .form-group input,
@@ -566,67 +556,8 @@ header {
 }
 
 
-
 /* ========================================
-   STAR RATING
-======================================== */
-
-.rating-stars {
-    display: flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    margin-top: 5px;
-}
-
-.rating-stars button {
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    font-size: 34px;
-
-    line-height: 1;
-
-    color: #d7d7d7;
-
-    padding: 2px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.rating-stars button:hover {
-    color: #f5b400;
-
-    transform: scale(1.15);
-}
-
-.rating-stars button.active {
-    color: #f5b400;
-
-    transform: scale(1.08);
-}
-
-.rating-text {
-    min-height: 20px;
-
-    margin-top: 8px;
-
-    font-size: 13px;
-
-    color: #777777;
-}
-
-
-
-/* ========================================
-   REVIEW SUBMIT
+   SUBMIT BUTTON
 ======================================== */
 
 .review-submit {
@@ -682,7 +613,6 @@ header {
 
     line-height: 1.5;
 }
-
 
 
 /* ========================================
@@ -782,7 +712,6 @@ header {
 }
 
 
-
 /* ========================================
    FOOTER
 ======================================== */
@@ -808,7 +737,6 @@ footer p {
 
     font-size: 14px;
 }
-
 
 
 /* ========================================
@@ -841,13 +769,11 @@ footer p {
 
     .hero-logo {
         width: 400px;
-
         height: 400px;
     }
 
     .hero-logo img {
         width: 350px;
-
         height: 280px;
     }
 
@@ -867,7 +793,6 @@ footer p {
     }
 
 }
-
 
 
 /* ========================================
@@ -910,13 +835,11 @@ footer p {
 
     .hero-logo {
         width: 300px;
-
         height: 250px;
     }
 
     .hero-logo img {
         width: 280px;
-
         height: 210px;
     }
 
@@ -959,9 +882,4 @@ footer p {
         padding: 25px;
     }
 
-    .rating-stars button {
-        font-size: 30px;
-    }
-
 }
-```
