@@ -58,156 +58,156 @@ if ("IntersectionObserver" in window) {
 // STAR RATING
 // ========================================
 
-document.addEventListener("DOMContentLoaded", function () {
+const stars = document.querySelectorAll(
+    ".rating-stars button"
+);
 
-    const stars = document.querySelectorAll(
-        ".rating-stars button"
-    );
+const ratingInput = document.getElementById("rating");
 
-    const ratingInput = document.getElementById("rating");
+const ratingText = document.getElementById(
+    "rating-text"
+);
 
-    const ratingText = document.getElementById(
-        "rating-text"
-    );
-
-    console.log("Stars found:", stars.length);
+console.log("MSK: Stars found =", stars.length);
 
 
-    // ------------------------------------
-    // CLICK STAR
-    // ------------------------------------
+// Current selected rating
+let selectedRating = 0;
 
-    stars.forEach(function (star) {
 
-        star.addEventListener("click", function (event) {
+// ----------------------------------------
+// STAR CLICK
+// ----------------------------------------
 
-            event.preventDefault();
+stars.forEach((star) => {
 
-            const rating = parseInt(
-                this.getAttribute("data-rating")
+    star.addEventListener("click", (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        selectedRating = Number(
+            star.getAttribute("data-rating")
+        );
+
+        console.log(
+            "MSK: Star clicked =",
+            selectedRating
+        );
+
+
+        // Save rating
+        if (ratingInput) {
+
+            ratingInput.value = selectedRating;
+
+        }
+
+
+        // Highlight selected stars
+        stars.forEach((singleStar) => {
+
+            const number = Number(
+                singleStar.getAttribute("data-rating")
             );
 
-            console.log("Selected rating:", rating);
+            if (number <= selectedRating) {
 
+                singleStar.classList.add("active");
 
-            // Save rating
-            if (ratingInput) {
-                ratingInput.value = rating;
-            }
+            } else {
 
-
-            // Highlight stars
-            stars.forEach(function (singleStar) {
-
-                const singleRating = parseInt(
-                    singleStar.getAttribute("data-rating")
-                );
-
-                if (singleRating <= rating) {
-
-                    singleStar.classList.add("active");
-
-                } else {
-
-                    singleStar.classList.remove("active");
-
-                }
-
-            });
-
-
-            // Rating message
-            if (ratingText) {
-
-                if (rating === 1) {
-                    ratingText.textContent =
-                        "Thank you for your honest feedback.";
-                }
-
-                else if (rating === 2) {
-                    ratingText.textContent =
-                        "Thank you for sharing your experience.";
-                }
-
-                else if (rating === 3) {
-                    ratingText.textContent =
-                        "Thank you for sharing your experience with us.";
-                }
-
-                else if (rating === 4) {
-                    ratingText.textContent =
-                        "We're glad you had a good experience.";
-                }
-
-                else if (rating === 5) {
-                    ratingText.textContent =
-                        "We're glad you were happy with our service.";
-                }
+                singleStar.classList.remove("active");
 
             }
 
         });
 
 
-        // ------------------------------------
-        // HOVER
-        // ------------------------------------
+        // Rating message
+        if (ratingText) {
 
-        star.addEventListener("mouseenter", function () {
+            const messages = {
 
-            const hoverRating = parseInt(
-                this.getAttribute("data-rating")
-            );
+                1: "Thank you for your honest feedback.",
 
-            stars.forEach(function (singleStar) {
+                2: "Thank you for sharing your experience.",
 
-                const singleRating = parseInt(
-                    singleStar.getAttribute("data-rating")
-                );
+                3: "Thank you for sharing your experience with us.",
 
-                if (singleRating <= hoverRating) {
+                4: "We're glad you had a good experience.",
 
-                    singleStar.classList.add("hover");
+                5: "We're glad you were happy with our service."
 
-                } else {
+            };
 
-                    singleStar.classList.remove("hover");
+            ratingText.textContent =
+                messages[selectedRating];
 
-                }
+            ratingText.style.color = "#777777";
 
-            });
-
-        });
+        }
 
     });
 
 
     // ------------------------------------
-    // REMOVE HOVER
+    // STAR HOVER
     // ------------------------------------
 
-    const starContainer = document.querySelector(
-        ".rating-stars"
-    );
+    star.addEventListener("mouseenter", () => {
 
-    if (starContainer) {
-
-        starContainer.addEventListener(
-            "mouseleave",
-            function () {
-
-                stars.forEach(function (star) {
-
-                    star.classList.remove("hover");
-
-                });
-
-            }
+        const hoverRating = Number(
+            star.getAttribute("data-rating")
         );
 
-    }
+        stars.forEach((singleStar) => {
+
+            const number = Number(
+                singleStar.getAttribute("data-rating")
+            );
+
+            if (number <= hoverRating) {
+
+                singleStar.classList.add("hover");
+
+            } else {
+
+                singleStar.classList.remove("hover");
+
+            }
+
+        });
+
+    });
 
 });
+
+
+// ----------------------------------------
+// REMOVE HOVER
+// ----------------------------------------
+
+const starContainer = document.querySelector(
+    ".rating-stars"
+);
+
+if (starContainer) {
+
+    starContainer.addEventListener(
+        "mouseleave",
+        () => {
+
+            stars.forEach((star) => {
+
+                star.classList.remove("hover");
+
+            });
+
+        }
+    );
+
+}
 
 
 // ========================================
@@ -222,28 +222,27 @@ if (reviewForm) {
 
     reviewForm.addEventListener(
         "submit",
-        function (event) {
+        (event) => {
 
             event.preventDefault();
 
-            const ratingInput =
-                document.getElementById("rating");
-
-            const ratingText =
-                document.getElementById("rating-text");
 
             const feedback =
-                document.getElementById("review-feedback");
+                document.getElementById(
+                    "review-feedback"
+                );
 
             const success =
-                document.getElementById("review-success");
+                document.getElementById(
+                    "review-success"
+                );
 
 
-            // No rating selected
-            if (
-                !ratingInput ||
-                ratingInput.value === ""
-            ) {
+            // --------------------------------
+            // CHECK RATING
+            // --------------------------------
+
+            if (selectedRating === 0) {
 
                 if (ratingText) {
 
@@ -260,7 +259,10 @@ if (reviewForm) {
             }
 
 
-            // No feedback
+            // --------------------------------
+            // CHECK FEEDBACK
+            // --------------------------------
+
             if (
                 !feedback ||
                 feedback.value.trim() === ""
@@ -273,7 +275,10 @@ if (reviewForm) {
             }
 
 
-            // Success
+            // --------------------------------
+            // SUCCESS
+            // --------------------------------
+
             if (success) {
 
                 success.style.display = "block";
@@ -287,4 +292,13 @@ if (reviewForm) {
     );
 
 }
+
+
+// ========================================
+// WEBSITE LOADED
+// ========================================
+
+console.log(
+    "MSK Electrician: script loaded successfully."
+);
 ```
