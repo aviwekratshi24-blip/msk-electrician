@@ -82,21 +82,56 @@ header {
 ========================= */
 
 .hero {
-    min-height: 600px;
+    min-height: 650px;
     background: #111111;
     color: #ffffff;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    padding: 70px max(30px, calc((100% - 1200px) / 2));
-    gap: 50px;
+    padding: 60px 30px 80px;
+    text-align: center;
 }
 
+
+/* =========================
+   HERO LOGO
+========================= */
+
+.hero-logo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.hero-logo img {
+    width: 400px;
+    height: 300px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
 .hero-content {
-    max-width: 650px;
-    flex: 1;
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .small-title,
@@ -125,7 +160,7 @@ header {
 }
 
 .hero-text {
-    max-width: 600px;
+    max-width: 650px;
     color: #cccccc;
     font-size: 18px;
     margin-bottom: 35px;
@@ -135,6 +170,7 @@ header {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .primary-button,
@@ -165,30 +201,6 @@ header {
     background: #ffffff;
     color: #111111;
     transform: translateY(-2px);
-}
-
-
-/* =========================
-   HERO LOGO
-========================= */
-
-.hero-logo {
-    width: 450px;
-    height: 450px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.hero-logo img {
-    width: 400px;
-    height: 300px;
-
-    object-fit: contain;
-    display: block;
 }
 
 
@@ -233,7 +245,6 @@ header {
 
 .features {
     margin-top: 30px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -266,16 +277,10 @@ header {
     text-align: center;
 }
 
-.section-heading h1,
 .section-heading h2 {
     font-size: 45px;
     line-height: 1.1;
     margin-bottom: 20px;
-}
-
-.section-heading h1 span,
-.section-heading h2 span {
-    color: #f5b400;
 }
 
 .section-heading > p:last-child {
@@ -327,8 +332,7 @@ header {
    SERVICE BUTTON
 ========================= */
 
-.service-button,
-.service-link-button {
+.service-button {
     display: inline-block;
 
     margin-top: 22px;
@@ -348,16 +352,10 @@ header {
     transition: 0.25s ease;
 }
 
-.service-button:hover,
-.service-link-button:hover {
+.service-button:hover {
     background: #f5b400;
     color: #111111;
     transform: translateY(-2px);
-}
-
-.service-link {
-    text-decoration: none;
-    color: inherit;
 }
 
 
@@ -449,7 +447,7 @@ header {
 
 
 /* =========================
-   EXPERIENCE LEFT SIDE
+   LEFT SIDE
 ========================= */
 
 .experience-info {
@@ -506,7 +504,7 @@ header {
 
 
 /* =========================
-   REVIEW FORM
+   FORM
 ========================= */
 
 .review-form-container {
@@ -620,7 +618,7 @@ header {
 
 
 /* =========================
-   REVIEW SUBMIT
+   SUBMIT BUTTON
 ========================= */
 
 .review-submit {
@@ -715,7 +713,6 @@ header {
 
 .contact-buttons {
     margin-top: 30px;
-
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
@@ -725,12 +722,9 @@ header {
     text-decoration: none;
     background: #f5b400;
     color: #111111;
-
     padding: 14px 25px;
     border-radius: 5px;
-
     font-weight: 700;
-
     transition: 0.25s ease;
 }
 
@@ -794,204 +788,74 @@ footer p {
 
 /* =========================================================
    SERVICE DETAIL PAGES
-   Used by residential.html, commercial.html,
-   lighting.html, repairs.html, db-board.html,
-   and plugs-switches.html
 ========================================================= */
 
 .service-page {
     background: #ffffff;
 }
 
-
-/* =========================
-   SERVICE HERO
-========================= */
-
 .service-page-hero {
     background: #111111;
     color: #ffffff;
-
-    min-height: 500px;
-
-    padding: 80px 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-page-heading {
-    max-width: 900px;
-    width: 100%;
-    margin: auto;
+    padding: 100px 30px;
     text-align: center;
 }
 
-.service-page-icon {
-    width: 90px;
-    height: 90px;
-
-    margin: 0 auto 25px;
-
-    background: #f5b400;
-    color: #111111;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 42px;
+.service-page-hero .service-page-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
 }
 
-.service-page-heading .section-label {
-    margin-bottom: 15px;
-}
-
-.service-page-heading h1 {
+.service-page-hero h1 {
     font-size: clamp(42px, 6vw, 70px);
     line-height: 1.05;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.service-page-heading h1 span {
+.service-page-hero h1 span {
     color: #f5b400;
 }
 
-.service-page-heading > p:last-child {
+.service-page-hero > p:last-child {
     max-width: 700px;
     margin: auto;
-
     color: #cccccc;
     font-size: 18px;
 }
 
-
-/* =========================
-   SERVICE INTRO
-========================= */
-
-.service-page-content {
+.service-detail {
     max-width: 1200px;
     margin: auto;
-
-    padding: 100px 30px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-
-    align-items: center;
+    padding: 90px 30px;
 }
 
 .service-detail-content {
-    max-width: 1200px;
+    max-width: 850px;
     margin: auto;
-
-    padding: 100px 30px;
 }
 
-.service-detail-content h2,
-.service-description h2 {
+.service-detail-content h2 {
     font-size: 45px;
     line-height: 1.1;
     margin-bottom: 25px;
 }
 
-.service-detail-content h2 span,
-.service-description h2 span {
+.service-detail-content h2 span {
     color: #f5b400;
 }
 
-.service-detail-content > p:not(.section-label),
-.service-description > p:not(.section-label) {
+.service-detail-content > p:not(.section-label) {
     color: #666666;
     margin-bottom: 20px;
 }
 
-.service-page-content > p {
-    color: #666666;
-}
-
-.service-page-content h1 {
-    font-size: 50px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.service-page-content h1 span {
-    color: #f5b400;
-}
-
-.service-page-content .primary-button {
-    display: inline-block;
-    margin-top: 20px;
-}
-
-
-/* =========================
-   SERVICE DESCRIPTION
-========================= */
-
-.service-description {
-    max-width: 650px;
-}
-
-
-/* =========================
-   SERVICE PHOTO PLACEHOLDER
-========================= */
-
-.service-photo-placeholder {
-    min-height: 350px;
-
+.service-jobs-section {
     background: #f7f7f7;
-    border: 2px dashed #dddddd;
-    border-radius: 12px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #777777;
+    padding: 90px 30px;
 }
 
-.service-photo-placeholder span {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.service-photo-placeholder p {
-    font-size: 18px;
-    font-weight: 700;
-    color: #444444;
-}
-
-.service-photo-placeholder small {
-    margin-top: 8px;
-    color: #999999;
-}
-
-
-/* =========================
-   SERVICE JOBS
-========================= */
-
-.service-jobs {
-    background: #f7f7f7;
-    padding: 100px 30px;
-}
-
-.service-jobs-grid,
-.jobs-grid {
-    max-width: 1100px;
+.service-jobs-grid {
+    max-width: 1200px;
     margin: auto;
 
     display: grid;
@@ -999,15 +863,11 @@ footer p {
     gap: 25px;
 }
 
-.service-job-card,
-.job-item {
+.service-job-card {
     background: #ffffff;
-
     border: 1px solid #eeeeee;
     border-radius: 10px;
-
     padding: 30px;
-
     transition: 0.25s ease;
 }
 
@@ -1018,74 +878,83 @@ footer p {
 
 .service-job-icon {
     font-size: 35px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .service-job-card h3 {
     font-size: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .service-job-card p {
     color: #666666;
 }
 
-.job-item {
-    font-weight: 700;
-    color: #222222;
-}
-
 
 /* =========================
-   SERVICE PHOTO GALLERY
+   SERVICE PHOTOS
 ========================= */
 
-.service-photo-grid {
+.service-photos {
     max-width: 1200px;
     margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-
-    padding: 0 30px 100px;
+    padding: 90px 30px;
 }
 
-.service-photo-grid .service-photo-placeholder {
+.service-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-photo-placeholder {
     min-height: 260px;
+    background: #f7f7f7;
+    border: 2px dashed #dddddd;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #999999;
+}
+
+.service-photo-placeholder span {
+    font-size: 45px;
+    margin-bottom: 10px;
 }
 
 
 /* =========================
-   BEFORE & AFTER
+   BEFORE / AFTER
 ========================= */
 
 .before-after-section {
     background: #f7f7f7;
-    padding: 100px 30px;
+    padding: 90px 30px;
 }
 
 .before-after-grid {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
 .before-after-card {
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-
     border: 1px solid #eeeeee;
 }
 
 .before-placeholder,
-.after-placeholder,
-.before-photo,
-.after-photo {
+.after-placeholder {
     min-height: 300px;
 
     display: flex;
@@ -1093,32 +962,21 @@ footer p {
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
-
-    text-align: center;
+    color: #999999;
 }
 
-.before-placeholder,
-.before-photo {
+.before-placeholder {
     background: #eeeeee;
 }
 
-.after-placeholder,
-.after-photo {
+.after-placeholder {
     background: #f5f5f5;
 }
 
 .before-placeholder span,
-.after-placeholder span,
-.before-photo,
-.after-photo {
-    font-size: 40px;
-}
-
-.before-placeholder strong,
-.after-placeholder strong {
-    font-size: 14px;
-    letter-spacing: 2px;
+.after-placeholder span {
+    font-size: 45px;
+    margin-bottom: 10px;
 }
 
 
@@ -1126,30 +984,27 @@ footer p {
    SERVICE CTA
 ========================= */
 
-.service-page-quote {
+.service-cta {
     background: #111111;
     color: #ffffff;
-
-    padding: 100px 30px;
-
+    padding: 90px 30px;
     text-align: center;
 }
 
-.service-page-quote h2 {
+.service-cta h2 {
     font-size: 48px;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 
-.service-page-quote h2 span {
+.service-cta h2 span {
     color: #f5b400;
 }
 
-.service-page-quote > p:not(.section-label) {
+.service-cta > p:not(.section-label) {
+    color: #cccccc;
     max-width: 650px;
     margin: 0 auto 30px;
-
-    color: #cccccc;
 }
 
 .service-cta-buttons {
@@ -1160,9 +1015,9 @@ footer p {
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -1181,21 +1036,19 @@ footer p {
         padding: 10px 15px;
     }
 
-
     .hero {
-        padding: 70px 25px;
+        min-height: 650px;
+        padding: 55px 25px 70px;
     }
 
     .hero-logo {
-        width: 400px;
-        height: 400px;
+        max-width: 400px;
     }
 
     .hero-logo img {
         width: 350px;
-        height: 300px;
+        height: 280px;
     }
-
 
     .about,
     .why-us,
@@ -1203,45 +1056,37 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-
     .service-grid {
         grid-template-columns: 1fr 1fr;
     }
-
 
     .why-grid {
         grid-template-columns: 1fr;
     }
 
-
     .experience-layout {
         grid-template-columns: 1fr;
     }
 
-
-    .service-page-content {
-        grid-template-columns: 1fr;
-    }
-
-
-    .service-jobs-grid,
-    .jobs-grid {
+    .service-jobs-grid {
         grid-template-columns: 1fr 1fr;
     }
-
 
     .service-photo-grid {
         grid-template-columns: 1fr 1fr;
     }
-
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px;
+    }
 
     .nav-links {
         gap: 12px;
@@ -1253,33 +1098,32 @@ footer p {
         display: none;
     }
 
-
     .hero {
         min-height: auto;
-        padding: 60px 20px;
-        flex-direction: column;
-        text-align: center;
+        padding: 45px 20px 65px;
     }
 
-    .hero-content {
-        max-width: 100%;
+    .hero-logo {
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .hero-logo img {
+        width: 280px;
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        font-size: 16px;
     }
 
     .hero-buttons {
         justify-content: center;
     }
-
-
-    .hero-logo {
-        width: 300px;
-        height: 300px;
-    }
-
-    .hero-logo img {
-        width: 280px;
-        height: 300px;
-    }
-
 
     .about,
     .services,
@@ -1292,42 +1136,35 @@ footer p {
         padding: 70px 20px;
     }
 
-
     .about h2,
-    .section-heading h1,
     .section-heading h2,
     .contact h2,
     .why-us h2,
     .experience-heading h2,
-    .service-page-quote h2 {
+    .service-detail-content h2,
+    .service-cta h2 {
         font-size: 36px;
     }
-
 
     .service-grid {
         grid-template-columns: 1fr;
     }
 
-
     .features {
         grid-template-columns: 1fr;
     }
-
 
     .experience-layout {
         border-radius: 12px;
     }
 
-
     .experience-info {
         padding: 40px 25px;
     }
 
-
     .review-form-container {
         padding: 35px 25px;
     }
-
 
     .rating-stars {
         gap: 2px;
@@ -1337,64 +1174,23 @@ footer p {
         font-size: 34px;
     }
 
-
-    /* SERVICE PAGES */
-
-    .service-page-hero {
-        min-height: 430px;
-        padding: 60px 20px;
-    }
-
-    .service-page-heading h1 {
-        font-size: 42px;
-    }
-
-    .service-page-content,
-    .service-detail-content {
-        padding: 70px 20px;
-    }
-
-    .service-page-content h1,
-    .service-detail-content h2,
-    .service-description h2 {
-        font-size: 36px;
-    }
-
-    .service-photo-placeholder {
-        min-height: 280px;
-    }
-
-    .service-jobs {
-        padding: 70px 20px;
-    }
-
     .service-jobs-grid,
-    .jobs-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-photo-grid {
-        grid-template-columns: 1fr;
-        padding: 0 20px 70px;
-    }
-
-    .before-after-section {
-        padding: 70px 20px;
-    }
-
+    .service-photo-grid,
     .before-after-grid {
         grid-template-columns: 1fr;
     }
 
-    .before-placeholder,
-    .after-placeholder,
-    .before-photo,
-    .after-photo {
-        min-height: 250px;
-    }
-
-    .service-page-quote {
+    .service-page-hero {
         padding: 70px 20px;
     }
 
+    .service-detail {
+        padding: 70px 20px;
+    }
+
+    .service-photos,
+    .before-after-section,
+    .service-jobs-section {
+        padding: 70px 20px;
+    }
 }
