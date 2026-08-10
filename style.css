@@ -164,8 +164,8 @@ header {
 ========================= */
 
 .hero-logo {
-    width: 380px;
-    height: 380px;
+    width: 450px;
+    height: 450px;
 
     display: flex;
     align-items: center;
@@ -175,8 +175,8 @@ header {
 }
 
 .hero-logo img {
-    width: 220px;
-    height: 220px;
+    width: 400px;
+    height: 400px;
 
     object-fit: contain;
     display: block;
@@ -467,13 +467,13 @@ footer p {
     }
 
     .hero-logo {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
     }
 
     .hero-logo img {
-        width: 200px;
-        height: 200px;
+        width: 350px;
+        height: 350px;
     }
 
     .about,
@@ -523,13 +523,13 @@ footer p {
     }
 
     .hero-logo {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 
     .hero-logo img {
-        width: 180px;
-        height: 180px;
+        width: 280px;
+        height: 280px;
     }
 
     .about,
