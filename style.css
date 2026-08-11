@@ -1,9 +1,3 @@
-/* =========================================================
-   MSK ELECTRICIAN
-   MAIN STYLESHEET
-========================================================= */
-
-
 /* =========================
    RESET
 ========================= */
@@ -160,7 +154,9 @@ header {
 .services h2 span,
 .why-us h2 span,
 .contact h2 span,
-.experience-heading h2 span {
+.experience-heading h2 span,
+.service-page-hero h1 span,
+.services-page-hero h1 span {
     color: #f5b400;
     display: block;
 }
@@ -308,6 +304,9 @@ header {
     border-radius: 8px;
     border: 1px solid #eeeeee;
 
+    text-decoration: none;
+    color: #111111;
+
     transition:
         opacity 0.6s ease,
         transform 0.3s ease,
@@ -338,7 +337,8 @@ header {
    SERVICE BUTTON
 ========================= */
 
-.service-button {
+.service-button,
+.service-link-button {
     display: inline-block;
 
     margin-top: 22px;
@@ -358,7 +358,8 @@ header {
     transition: 0.25s ease;
 }
 
-.service-button:hover {
+.service-button:hover,
+.service-link-button:hover {
     background: #f5b400;
     color: #111111;
     transform: translateY(-2px);
@@ -450,6 +451,11 @@ header {
 
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
+
+
+/* =========================
+   LEFT SIDE
+========================= */
 
 .experience-info {
     padding: 55px 45px;
@@ -743,35 +749,44 @@ footer p {
     background: #ffffff;
 }
 
-.service-page-hero {
+
+/* =========================
+   SERVICE PAGE HERO
+========================= */
+
+.service-page-hero,
+.services-page-hero {
     background: #111111;
     color: #ffffff;
     padding: 100px 30px;
     text-align: center;
 }
 
-.service-page-hero .service-page-icon {
+.service-page-hero .service-page-icon,
+.services-page-hero .service-page-icon {
     font-size: 65px;
     margin-bottom: 20px;
 }
 
-.service-page-hero h1 {
+.service-page-hero h1,
+.services-page-hero h1 {
     font-size: clamp(42px, 6vw, 70px);
     line-height: 1.05;
     margin-bottom: 20px;
 }
 
-.service-page-hero h1 span {
-    color: #f5b400;
-    display: block;
-}
-
-.service-page-hero > p:last-child {
+.service-page-hero > p:last-child,
+.services-page-hero > p:last-child {
     max-width: 700px;
     margin: auto;
     color: #cccccc;
     font-size: 18px;
 }
+
+
+/* =========================
+   SERVICE DETAIL
+========================= */
 
 .service-detail {
     max-width: 1200px;
@@ -780,12 +795,8 @@ footer p {
 }
 
 .service-detail-content {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto 80px;
-}
-
-.service-detail-content:last-child {
-    margin-bottom: 0;
 }
 
 .service-detail-content h2 {
@@ -796,7 +807,6 @@ footer p {
 
 .service-detail-content h2 span {
     color: #f5b400;
-    display: block;
 }
 
 .service-detail-content > p:not(.section-label) {
@@ -813,27 +823,15 @@ footer p {
     display: flex;
     align-items: flex-start;
     gap: 25px;
+
     margin-bottom: 35px;
-}
-
-.service-detail-heading > div:last-child {
-    flex: 1;
-}
-
-.service-detail-heading h2 {
-    margin-bottom: 15px;
-}
-
-.service-detail-heading p:last-child {
-    color: #666666;
-    margin-bottom: 0;
 }
 
 .service-detail-icon {
     width: 65px;
     height: 65px;
 
-    flex: 0 0 65px;
+    flex-shrink: 0;
 
     background: #111111;
     color: #f5b400;
@@ -847,63 +845,33 @@ footer p {
     font-size: 30px;
 }
 
-
-/* =========================
-   SERVICE JOBS
-========================= */
-
-.service-jobs-section {
-    background: #f7f7f7;
-    padding: 90px 30px;
-}
-
-.service-jobs-section > .service-detail-content {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 12px;
-    padding: 40px;
-}
-
-.service-jobs-grid {
-    max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.service-job-card {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 30px;
-    transition: 0.25s ease;
-}
-
-.service-job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.service-job-icon {
-    font-size: 35px;
+.service-detail-heading h2 {
     margin-bottom: 15px;
 }
 
-.service-job-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.service-detail-heading p:last-child {
+    color: #666666;
 }
 
-.service-job-card p {
-    color: #666666;
+
+/* =========================================================
+   CERTIFICATE OF COMPLIANCE
+========================================================= */
+
+.service-detail-content:first-of-type {
+    margin-bottom: 70px;
 }
 
 
 /* =========================================================
    SERVICE PHOTOS
 ========================================================= */
+
+.service-photos {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 30px;
+}
 
 .service-photo-grid {
     display: grid;
@@ -912,11 +880,6 @@ footer p {
 
     margin-top: 30px;
 }
-
-
-/* =========================
-   PHOTO PLACEHOLDER
-========================= */
 
 .service-photo-placeholder {
     min-height: 260px;
@@ -931,7 +894,6 @@ footer p {
     justify-content: center;
 
     text-align: center;
-
     color: #999999;
 
     overflow: hidden;
@@ -941,10 +903,10 @@ footer p {
 
 
 /* =========================
-   REAL SERVICE PHOTOS
+   ACTUAL SERVICE PHOTOS
 ========================= */
 
-.service-photo-placeholder img.service-photo {
+.service-photo-placeholder img {
     width: 100%;
     height: 260px;
 
@@ -954,49 +916,68 @@ footer p {
 
     cursor: pointer;
 
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+    transition: transform 0.3s ease,
+                opacity 0.3s ease;
 }
 
-.service-photo-placeholder img.service-photo:hover {
+.service-photo-placeholder img:hover {
     transform: scale(1.03);
-    opacity: 0.92;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   BLANK PHOTO PLACEHOLDERS
+========================= */
+
+.service-photo-placeholder span {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.service-photo-placeholder p {
+    color: #999999;
 }
 
 
 /* =========================================================
-   FULL SCREEN PHOTO VIEWER
+   FULL-SCREEN PHOTO VIEWER
 ========================================================= */
 
-.photo-lightbox {
+.photo-viewer {
     position: fixed;
 
-    inset: 0;
+    top: 0;
+    left: 0;
 
     width: 100%;
     height: 100%;
 
     background: rgba(0, 0, 0, 0.94);
 
-    display: none;
-
+    display: flex;
     align-items: center;
     justify-content: center;
 
     padding: 40px;
 
+    opacity: 0;
+    visibility: hidden;
+
     z-index: 99999;
 
-    cursor: pointer;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
 }
 
-.photo-lightbox.show {
-    display: flex;
+.photo-viewer.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-.photo-lightbox img {
-    max-width: 95vw;
+.photo-viewer-image {
+    max-width: 95%;
     max-height: 90vh;
 
     width: auto;
@@ -1006,28 +987,31 @@ footer p {
 
     border-radius: 5px;
 
-    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
-
-    cursor: default;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.photo-lightbox-close {
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.photo-viewer-close {
     position: absolute;
 
     top: 20px;
-    right: 30px;
+    right: 25px;
 
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 
     border: none;
-
-    background: #f5b400;
-    color: #111111;
-
     border-radius: 50%;
 
-    font-size: 30px;
+    background: #ffffff;
+    color: #111111;
+
+    font-size: 35px;
     line-height: 1;
 
     cursor: pointer;
@@ -1036,13 +1020,15 @@ footer p {
     align-items: center;
     justify-content: center;
 
-    z-index: 2;
+    z-index: 100000;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
-.photo-lightbox-close:hover {
-    background: #ffffff;
+.photo-viewer-close:hover {
+    background: #f5b400;
     transform: scale(1.08);
 }
 
@@ -1106,9 +1092,7 @@ footer p {
 .service-cta {
     background: #111111;
     color: #ffffff;
-
     padding: 90px 30px;
-
     text-align: center;
 }
 
@@ -1136,9 +1120,9 @@ footer p {
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -1200,9 +1184,9 @@ footer p {
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 650px) {
 
@@ -1289,15 +1273,13 @@ footer p {
     }
 
     .service-jobs-grid,
+    .service-photo-grid,
     .before-after-grid {
         grid-template-columns: 1fr;
     }
 
-    .service-photo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-page-hero {
+    .service-page-hero,
+    .services-page-hero {
         padding: 70px 20px;
     }
 
@@ -1311,37 +1293,39 @@ footer p {
         padding: 70px 20px;
     }
 
-    .service-jobs-section > .service-detail-content {
-        padding: 25px 20px;
-    }
+
+    /* SERVICE DETAIL HEADING ON PHONE */
 
     .service-detail-heading {
-        flex-direction: column;
-        gap: 18px;
+        gap: 15px;
     }
 
     .service-detail-icon {
         width: 55px;
         height: 55px;
-        flex-basis: 55px;
         font-size: 25px;
     }
 
-    .photo-lightbox {
+
+    /* PHOTO VIEWER ON PHONE */
+
+    .photo-viewer {
         padding: 20px;
     }
 
-    .photo-lightbox img {
-        max-width: 96vw;
+    .photo-viewer-image {
+        max-width: 100%;
         max-height: 85vh;
     }
 
-    .photo-lightbox-close {
-        top: 12px;
+    .photo-viewer-close {
+        top: 15px;
         right: 15px;
-        width: 44px;
-        height: 44px;
-        font-size: 26px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 30px;
     }
 
 }
