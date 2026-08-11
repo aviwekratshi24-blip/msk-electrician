@@ -1272,11 +1272,14 @@ footer p {
         padding: 35px 25px;
     }
 
-    .service-jobs-grid,
-    .service-photo-grid,
-    .before-after-grid {
-        grid-template-columns: 1fr;
-    }
+ .service-jobs-grid,
+.service-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.before-after-grid {
+    grid-template-columns: 1fr;
+}
 
     .service-page-hero,
     .services-page-hero {
