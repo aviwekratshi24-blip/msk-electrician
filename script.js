@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.opacity = "0";
             card.style.transform = "translateY(30px)";
             card.style.transition =
-                "opacity 0.6s ease, transform 0.6s ease";
+                "opacity 0.6s ease, transform 0.3s ease";
 
             observer.observe(card);
 
@@ -58,250 +58,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // STAR RATING
+    // LIGHTING PHOTO FULL-SCREEN VIEWER
     // ==========================================
 
-    const stars = document.querySelectorAll(".rating-star");
-    const ratingInput = document.getElementById("rating");
-    const ratingText = document.getElementById("rating-text");
+    const serviceImages =
+        document.querySelectorAll(".service-photo-placeholder img");
 
-    let selectedRating = 0;
+    if (serviceImages.length > 0) {
 
-    const ratingMessages = {
+        // Create full-screen viewer
 
-        1: "Thank you for sharing your honest feedback.",
+        const viewer = document.createElement("div");
 
-        2: "Thank you for taking the time to respond.",
+        viewer.className = "photo-viewer";
 
-        3: "Thank you for sharing your experience.",
+        viewer.innerHTML = `
+            <button class="photo-viewer-close" aria-label="Close">
+                ×
+            </button>
 
-        4: "We're glad to hear that your experience was positive.",
+            <img class="photo-viewer-image" src="" alt="">
+        `;
 
-        5: "We're glad you had a great experience with our service."
-
-    };
+        document.body.appendChild(viewer);
 
 
-    function updateStars(rating) {
+        const viewerImage =
+            viewer.querySelector(".photo-viewer-image");
 
-        stars.forEach(function (star) {
+        const closeButton =
+            viewer.querySelector(".photo-viewer-close");
 
-            const starRating =
-                Number(star.dataset.rating);
 
-            if (starRating <= rating) {
+        // Open image
 
-                star.classList.add("active");
-                star.textContent = "★";
+        serviceImages.forEach(function (image) {
 
-            } else {
+            image.style.cursor = "pointer";
 
-                star.classList.remove("active");
-                star.textContent = "☆";
+            image.addEventListener("click", function () {
+
+                viewerImage.src = this.src;
+                viewerImage.alt = this.alt;
+
+                viewer.classList.add("show");
+
+                document.body.style.overflow = "hidden";
+
+            });
+
+        });
+
+
+        // Close button
+
+        closeButton.addEventListener("click", function () {
+
+            closePhotoViewer();
+
+        });
+
+
+        // Click outside image to close
+
+        viewer.addEventListener("click", function (event) {
+
+            if (event.target === viewer) {
+
+                closePhotoViewer();
 
             }
 
         });
 
-    }
+
+        // ESC key closes image
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                closePhotoViewer();
+
+            }
+
+        });
 
 
-    function setRating(rating) {
+        function closePhotoViewer() {
 
-        selectedRating = rating;
+            viewer.classList.remove("show");
 
-        if (ratingInput) {
+            document.body.style.overflow = "";
 
-            ratingInput.value = rating;
+            viewerImage.src = "";
 
         }
-
-        updateStars(rating);
-
-        if (ratingText) {
-
-            ratingText.textContent =
-                ratingMessages[rating] || "";
-
-            ratingText.style.color = "#777777";
-
-        }
-
-    }
-
-
-    // ==========================================
-    // STAR CLICK
-    // ==========================================
-
-    stars.forEach(function (star) {
-
-        star.addEventListener("click", function () {
-
-            const rating =
-                Number(this.dataset.rating);
-
-            setRating(rating);
-
-        });
-
-
-        // Preview stars when hovering
-
-        star.addEventListener("mouseenter", function () {
-
-            const rating =
-                Number(this.dataset.rating);
-
-            updateStars(rating);
-
-        });
-
-    });
-
-
-    // ==========================================
-    // RESTORE SELECTED RATING
-    // ==========================================
-
-    const starContainer =
-        document.querySelector(".rating-stars");
-
-    if (starContainer) {
-
-        starContainer.addEventListener(
-            "mouseleave",
-            function () {
-
-                updateStars(selectedRating);
-
-            }
-        );
-
-    }
-
-
-    // ==========================================
-    // REVIEW FORM
-    // ==========================================
-
-    const reviewForm =
-        document.getElementById("review-form");
-
-    const successMessage =
-        document.getElementById("review-success");
-
-
-    if (reviewForm) {
-
-        reviewForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                // Check rating
-
-                if (selectedRating === 0) {
-
-                    if (ratingText) {
-
-                        ratingText.textContent =
-                            "Please select a star rating.";
-
-                        ratingText.style.color =
-                            "#d9534f";
-
-                    }
-
-                    return;
-
-                }
-
-
-                // Check feedback
-
-                const feedback =
-                    document.getElementById("review-feedback");
-
-
-                if (!feedback ||
-                    feedback.value.trim() === "") {
-
-                    if (feedback) {
-
-                        feedback.focus();
-
-                        feedback.style.borderColor =
-                            "#d9534f";
-
-                    }
-
-                    return;
-
-                }
-
-
-                // Remove error styling
-
-                feedback.style.borderColor =
-                    "#dddddd";
-
-
-                // Show success message
-
-                if (successMessage) {
-
-                    successMessage.classList.add("show");
-
-                }
-
-
-                // Clear form
-
-                reviewForm.reset();
-
-
-                // Reset rating
-
-                selectedRating = 0;
-
-                if (ratingInput) {
-
-                    ratingInput.value = "";
-
-                }
-
-
-                updateStars(0);
-
-
-                if (ratingText) {
-
-                    ratingText.textContent =
-                        "Thank you for sharing your experience.";
-
-                    ratingText.style.color =
-                        "#777777";
-
-                }
-
-
-                // Hide success message after 5 seconds
-
-                setTimeout(function () {
-
-                    if (successMessage) {
-
-                        successMessage.classList.remove("show");
-
-                    }
-
-                }, 5000);
-
-            }
-        );
 
     }
 
@@ -334,44 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 target.scrollIntoView({
                     behavior: "smooth"
                 });
-
-            }
-
-        });
-
-    });
-
-
-    // ==========================================
-    // SERVICE PAGE BUTTONS
-    // ==========================================
-    // Service cards use normal links to open
-    // separate service pages such as:
-    //
-    // residential.html
-    // commercial.html
-    // lighting.html
-    // repairs.html
-    // db-board.html
-    // plugs-switches.html
-    //
-    // No JavaScript is required to open them.
-    // This section simply makes sure service
-    // links work normally.
-
-    const serviceLinks =
-        document.querySelectorAll(".service-card a");
-
-    serviceLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            const destination =
-                this.getAttribute("href");
-
-            if (destination) {
-
-                window.location.href = destination;
 
             }
 
