@@ -43,8 +43,8 @@
                 Services
             </a>
 
-            <a href="#experience">
-                Experience
+            <a href="#rate-us">
+                Rate Us
             </a>
 
             <a href="#contact">
@@ -378,111 +378,202 @@
 
 
 <!-- =========================
-     EXPERIENCE
+     RATE US
 ========================= -->
 
-<section class="experience" id="experience">
+<section class="rate-us" id="rate-us">
 
 
-    <div class="experience-heading">
+    <div class="rate-heading">
 
         <p class="section-label">
-            OUR EXPERIENCE
+            RATE YOUR EXPERIENCE
         </p>
 
         <h2>
-            Quality electrical
-            <span>workmanship.</span>
+            Tell us what you
+            <span>think.</span>
         </h2>
 
         <p>
-            Tell us what electrical work you need and
-            we will help you find the right solution.
+            We value your feedback. Let us know about
+            your experience with MSK Electrician.
         </p>
 
     </div>
 
 
-    <div class="experience-layout">
+
+    <div class="rate-card">
 
 
-        <div class="experience-info">
+        <!-- LEFT SIDE -->
 
-            <div class="experience-icon">
-                ⚡
+        <div class="rate-info">
+
+            <div class="rate-icon">
+                ⭐
             </div>
 
             <h3>
-                Have an electrical
-                project in mind?
+                Rate Our Service
             </h3>
 
             <p>
-                Whether you need electrical work for your
-                home, office, shop or business, get in
-                touch with MSK Electrician.
-            </p>
-
-            <div class="experience-line"></div>
-
-            <p class="experience-note">
-                Request a quotation and discuss your
-                electrical requirements with us.
+                Your feedback helps us continue
+                providing professional and reliable
+                electrical services.
             </p>
 
         </div>
 
 
-        <div class="review-form-container">
 
-            <form id="review-form">
+        <!-- FORM -->
+
+        <div class="rate-form-container">
+
+            <form id="rate-form">
+
 
                 <div class="form-group">
 
-                    <label for="name">
+                    <label>
                         Your Name
                     </label>
 
                     <input
                         type="text"
-                        id="name"
+                        id="rate-name"
                         name="name"
-                        placeholder="Enter your name">
+                        placeholder="Enter your name"
+                        required>
 
                 </div>
 
+
+
+                <!-- STAR RATING -->
 
                 <div class="form-group">
 
-                    <label for="feedback">
-                        Your Message
+                    <label>
+                        Your Rating
+                    </label>
+
+                    <div class="rating-stars"
+                         id="rating-stars">
+
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="1"
+                            aria-label="1 star">
+
+                            ☆
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="2"
+                            aria-label="2 stars">
+
+                            ☆
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="3"
+                            aria-label="3 stars">
+
+                            ☆
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="4"
+                            aria-label="4 stars">
+
+                            ☆
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="5"
+                            aria-label="5 stars">
+
+                            ☆
+
+                        </button>
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        id="rating"
+                        name="rating">
+
+                    <p
+                        class="rating-text"
+                        id="rating-text">
+
+                        Select a rating.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- COMMENT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Your Comment
                     </label>
 
                     <textarea
-                        id="feedback"
-                        name="feedback"
-                        placeholder="Tell us what electrical work you need..."></textarea>
+                        id="rate-comment"
+                        name="comment"
+                        placeholder="Tell us about your experience..."
+                        required></textarea>
 
                 </div>
+
 
 
                 <button
                     type="submit"
                     class="review-submit">
 
-                    Send Enquiry
-                    <span>→</span>
+                    Submit Review
+
+                    <span>
+                        →
+                    </span>
 
                 </button>
 
 
+
                 <div
                     class="review-success"
-                    id="review-success">
+                    id="rate-success">
 
-                    Thank you. Your enquiry has been received.
+                    Thank you for your feedback!
 
                 </div>
+
 
             </form>
 
@@ -533,7 +624,8 @@
             <a
                 href="https://wa.me/27687250922"
                 class="contact-button whatsapp"
-                target="_blank">
+                target="_blank"
+                rel="noopener">
 
                 💬 WhatsApp Us
 
@@ -632,31 +724,189 @@
 
 
 <!-- =========================
-     SIMPLE FORM MESSAGE
+     RATE US JAVASCRIPT
 ========================= -->
 
 <script>
 
-const reviewForm =
-    document.getElementById("review-form");
-
-const reviewSuccess =
-    document.getElementById("review-success");
+document.addEventListener("DOMContentLoaded", function () {
 
 
-if (reviewForm) {
+    const stars =
+        document.querySelectorAll(".rating-star");
 
-    reviewForm.addEventListener("submit", function(event) {
+    const ratingInput =
+        document.getElementById("rating");
 
-        event.preventDefault();
+    const ratingText =
+        document.getElementById("rating-text");
 
-        reviewSuccess.classList.add("show");
+    const rateForm =
+        document.getElementById("rate-form");
 
-        reviewForm.reset();
+    const rateSuccess =
+        document.getElementById("rate-success");
+
+
+    let selectedRating = 0;
+
+
+
+    const ratingMessages = {
+
+        1: "Thank you for your honest feedback.",
+
+        2: "Thank you for taking the time to rate us.",
+
+        3: "Thank you for sharing your experience.",
+
+        4: "We're glad you had a positive experience.",
+
+        5: "We're glad you had a great experience!"
+
+    };
+
+
+
+    function updateStars(rating) {
+
+        stars.forEach(function (star) {
+
+            const starRating =
+                Number(star.dataset.rating);
+
+
+            if (starRating <= rating) {
+
+                star.classList.add("active");
+
+                star.textContent = "★";
+
+            } else {
+
+                star.classList.remove("active");
+
+                star.textContent = "☆";
+
+            }
+
+        });
+
+    }
+
+
+
+    stars.forEach(function (star) {
+
+
+        star.addEventListener("click", function () {
+
+            selectedRating =
+                Number(this.dataset.rating);
+
+
+            ratingInput.value =
+                selectedRating;
+
+
+            updateStars(selectedRating);
+
+
+            ratingText.textContent =
+                ratingMessages[selectedRating];
+
+        });
+
+
+
+        star.addEventListener("mouseenter", function () {
+
+            const hoverRating =
+                Number(this.dataset.rating);
+
+            updateStars(hoverRating);
+
+        });
 
     });
 
-}
+
+
+    const starContainer =
+        document.getElementById("rating-stars");
+
+
+    if (starContainer) {
+
+        starContainer.addEventListener(
+            "mouseleave",
+            function () {
+
+                updateStars(selectedRating);
+
+            }
+        );
+
+    }
+
+
+
+    if (rateForm) {
+
+        rateForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (selectedRating === 0) {
+
+                    ratingText.textContent =
+                        "Please select a star rating.";
+
+                    ratingText.style.color =
+                        "#d9534f";
+
+                    return;
+
+                }
+
+
+                ratingText.style.color =
+                    "#777777";
+
+
+                rateSuccess.classList.add("show");
+
+
+                rateForm.reset();
+
+
+                selectedRating = 0;
+
+                ratingInput.value = "";
+
+                updateStars(0);
+
+
+                ratingText.textContent =
+                    "Select a rating.";
+
+
+                setTimeout(function () {
+
+                    rateSuccess.classList.remove("show");
+
+                }, 5000);
+
+            }
+        );
+
+    }
+
+
+});
 
 </script>
 
