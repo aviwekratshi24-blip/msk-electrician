@@ -1341,3 +1341,191 @@ footer p {
         text-align: center;
     }
 }
+
+/* ==========================================
+   COMPACT SERVICE PHOTO ROW
+   ALL 5 PHOTOS ON ONE ROW
+   ========================================== */
+
+.service-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.service-photo-placeholder {
+    min-height: 130px;
+    height: 130px;
+    border-radius: 7px;
+}
+
+.service-photo-placeholder img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   MAKE HOME PAGE MORE COMPACT
+   ========================================== */
+
+.hero {
+    min-height: 560px;
+    padding: 40px 25px 55px;
+}
+
+.hero-logo {
+    margin-bottom: 10px;
+}
+
+.hero-logo img {
+    width: 330px;
+    height: 240px;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+}
+
+.hero-text {
+    margin-bottom: 25px;
+}
+
+.about {
+    padding: 65px 30px;
+    gap: 45px;
+}
+
+.about-image {
+    min-height: 280px;
+}
+
+.services {
+    padding: 65px 30px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.service-card {
+    padding: 25px;
+}
+
+.why-us {
+    padding: 65px 30px;
+    gap: 40px;
+}
+
+.experience {
+    padding: 65px 30px;
+}
+
+.experience-heading {
+    margin-bottom: 35px;
+}
+
+.experience-layout {
+    gap: 30px;
+}
+
+.contact {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    gap: 40px;
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .service-photo-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .service-photo-placeholder {
+        min-height: 100px;
+        height: 100px;
+    }
+
+    .service-photo-placeholder img {
+        height: 100px;
+    }
+
+}
+
+
+/* ==========================================
+   PHONE
+   ========================================== */
+
+@media (max-width: 650px) {
+
+    .service-photo-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+    }
+
+    .service-photo-placeholder {
+        min-height: 75px;
+        height: 75px;
+        border-radius: 5px;
+    }
+
+    .service-photo-placeholder img {
+        height: 75px;
+    }
+
+    .service-photo-placeholder span {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .service-photo-placeholder p {
+        display: none;
+    }
+
+
+    /* HOME PAGE PHONE SPACING */
+
+    .hero {
+        padding: 30px 15px 45px;
+    }
+
+    .hero-logo img {
+        width: 250px;
+        height: 190px;
+    }
+
+    .about,
+    .services,
+    .why-us,
+    .contact {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .experience {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .about-image {
+        min-height: 220px;
+    }
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+}
