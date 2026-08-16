@@ -1,1605 +1,973 @@
-/* =====================================================
-   MSK ELECTRICIAN
-   CLEAN DARK + GOLD DESIGN
-===================================================== */
+<!DOCTYPE html>
+<html lang="en">
 
-:root {
+<head>
 
-    --black: #050505;
-    --dark: #0b0d0f;
-    --dark-2: #101214;
-    --card: #151719;
+    <meta charset="UTF-8">
 
-    --gold: #f5b400;
-    --gold-light: #ffc52b;
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    --white: #ffffff;
+    <title>Commercial Electrical Services | MSK Electrician</title>
 
-    --text: #d5d5d5;
-    --muted: #9b9b9b;
+    <meta name="description"
+          content="Professional commercial electrical services from MSK Electrician.">
 
-    --border: #2a2d30;
+    <link rel="stylesheet" href="style.css">
 
-}
+</head>
 
 
-/* =====================================================
-   RESET
-===================================================== */
+<body>
 
-* {
 
-    margin: 0;
-    padding: 0;
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    box-sizing: border-box;
+<header>
 
-}
+    <nav class="navbar">
 
 
-html {
+        <a href="index.html#home"
+           class="nav-logo">
 
-    scroll-behavior: smooth;
+            <img
+                src="ChatGPT%20Image%20Aug%2010,%202026,%2003_28_34%20PM.png"
+                alt="MSK Electrician Logo">
 
-    scroll-padding-top: 82px;
+        </a>
 
-}
 
+        <div class="nav-links">
 
-body {
+            <a href="index.html#home">
+                Home
+            </a>
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+            <a href="index.html#about">
+                About
+            </a>
 
-    background: var(--dark);
+            <a href="index.html#services">
+                Services
+            </a>
 
-    color: var(--white);
+            <a href="index.html#experience">
+                Experience
+            </a>
 
-    line-height: 1.6;
+            <a href="index.html#contact">
+                Contact
+            </a>
 
-}
+        </div>
 
 
-a {
+        <a href="index.html#contact"
+           class="nav-button">
 
-    color: inherit;
+            Get a Quote
 
-    text-decoration: none;
+        </a>
 
-}
 
+        <a href="tel:+27687250922"
+           class="nav-phone">
 
-img {
+            <span>📞</span>
 
-    max-width: 100%;
+            068 725 0922
 
-    display: block;
+        </a>
 
-}
+    </nav>
 
+</header>
 
-/* =====================================================
-   STICKY HEADER
-===================================================== */
 
-header {
 
-    position: sticky;
+<main>
 
-    top: 0;
 
-    z-index: 9999;
+<!-- =====================================================
+     COMMERCIAL HERO
+===================================================== -->
 
-    width: 100%;
+<section class="service-hero">
 
-    background:
-        rgba(0, 0, 0, 0.97);
 
-    border-bottom:
-        1px solid #262626;
+    <div class="service-hero-content">
 
-    backdrop-filter:
-        blur(10px);
+        <p class="section-label">
+            MSK ELECTRICIAN
+        </p>
 
-}
 
+        <h1>
 
-.navbar {
+            Commercial
 
-    width: 100%;
+            <span>
+                Electrical Services
+            </span>
 
-    max-width: 1400px;
+        </h1>
 
-    min-height: 76px;
 
-    margin: 0 auto;
+        <p>
 
-    padding: 0 28px;
+            Professional electrical solutions for offices,
+            shops, businesses and other commercial properties.
+            We provide reliable electrical installations,
+            upgrades, maintenance and repairs with a focus
+            on safety, functionality and quality workmanship.
 
-    display: flex;
+        </p>
 
-    align-items: center;
 
-    gap: 28px;
+        <div class="hero-buttons">
 
-}
+            <a href="index.html#contact"
+               class="primary-button">
 
+                Get a Free Quote
 
-/* =====================================================
-   LOGO
-===================================================== */
+            </a>
 
-.nav-logo {
 
-    width: 115px;
+            <a href="tel:+27687250922"
+               class="secondary-button">
 
-    height: 58px;
+                📞 Call Us
 
-    display: flex;
+            </a>
 
-    align-items: center;
+        </div>
 
-    flex-shrink: 0;
+    </div>
 
-}
 
+    <div class="service-hero-icon">
+        🏢
+    </div>
 
-.nav-logo img {
+</section>
 
-    width: 100%;
 
-    height: 100%;
 
-    object-fit: contain;
+<!-- =====================================================
+     COMMERCIAL LIGHTING
+===================================================== -->
 
-}
+<section class="service-detail-section">
 
 
-/* =====================================================
-   NAV LINKS
-===================================================== */
+    <div class="service-detail-heading">
 
-.nav-links {
+        <div class="service-detail-icon">
+            💡
+        </div>
 
-    display: flex;
 
-    align-items: center;
+        <div>
 
-    justify-content: center;
+            <p class="section-label">
+                COMMERCIAL SERVICE
+            </p>
 
-    gap: 34px;
 
-    margin-left: auto;
+            <h2>
 
-}
+                Commercial
 
+                <span>
+                    Lighting
+                </span>
 
-.nav-links a {
+            </h2>
 
-    position: relative;
 
-    color: #f5f5f5;
+            <p>
 
-    font-size: 14px;
+                Professional lighting installations and
+                upgrades for offices, shops, business
+                premises and other commercial spaces.
 
-    font-weight: 700;
+            </p>
 
-    text-transform: uppercase;
+        </div>
 
-    transition: 0.25s ease;
+    </div>
 
-}
 
 
-.nav-links a:hover {
+    <div class="service-photo-grid">
 
-    color: var(--gold);
 
-}
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Lighting 01</p>
+        </div>
 
 
-.nav-links a::after {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Lighting 02</p>
+        </div>
 
-    content: "";
 
-    position: absolute;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Lighting 03</p>
+        </div>
 
-    left: 0;
 
-    bottom: -8px;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Lighting 04</p>
+        </div>
 
-    width: 0;
 
-    height: 2px;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Lighting 05</p>
+        </div>
 
-    background: var(--gold);
 
-    transition: width 0.25s ease;
+    </div>
 
-}
 
 
-.nav-links a:hover::after {
+    <div class="service-card-buttons">
 
-    width: 100%;
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
-}
+            📞 Call Us
 
+        </a>
 
-/* =====================================================
-   QUOTE BUTTON
-===================================================== */
 
-.nav-button {
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    border:
-        1px solid var(--gold);
+            Get a Free Quote
 
-    color: var(--gold);
+        </a>
 
-    padding:
-        11px 19px;
+    </div>
 
-    border-radius: 5px;
+</section>
 
-    font-size: 13px;
 
-    font-weight: 700;
 
-    text-transform: uppercase;
+<!-- =====================================================
+     PLUGS & SWITCHES
+===================================================== -->
 
-    white-space: nowrap;
+<section class="service-detail-section">
 
-    transition: 0.25s ease;
 
-}
+    <div class="service-detail-heading">
 
+        <div class="service-detail-icon">
+            🔌
+        </div>
 
-.nav-button:hover {
 
-    background: var(--gold);
+        <div>
 
-    color: #000;
+            <p class="section-label">
+                COMMERCIAL SERVICE
+            </p>
 
-}
 
+            <h2>
 
-/* =====================================================
-   PHONE
-===================================================== */
+                Plugs &
 
-.nav-phone {
+                <span>
+                    Switches
+                </span>
 
-    display: flex;
+            </h2>
 
-    align-items: center;
 
-    gap: 8px;
+            <p>
 
-    color: #fff;
+                Installation and replacement of electrical
+                plugs, switches and related accessories
+                for commercial properties.
 
-    font-size: 14px;
+            </p>
 
-    font-weight: 700;
+        </div>
 
-    white-space: nowrap;
+    </div>
 
-}
 
 
-.nav-phone span {
+    <div class="service-photo-grid">
 
-    color: var(--gold);
 
-    font-size: 20px;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Plugs & Switches 01</p>
+        </div>
 
-}
 
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Plugs & Switches 02</p>
+        </div>
 
-/* =====================================================
-   GENERAL
-===================================================== */
 
-section {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Plugs & Switches 03</p>
+        </div>
 
-    width: 100%;
 
-}
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Plugs & Switches 04</p>
+        </div>
 
 
-.section-label,
-.small-title {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Plugs & Switches 05</p>
+        </div>
 
-    color: var(--gold);
 
-    font-size: 13px;
+    </div>
 
-    font-weight: 800;
 
-    letter-spacing: 1.5px;
 
-    margin-bottom: 14px;
+    <div class="service-card-buttons">
 
-}
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
+            📞 Call Us
 
-.section-heading {
+        </a>
 
-    max-width: 850px;
 
-    margin:
-        0 auto 50px;
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    text-align: center;
+            Get a Free Quote
 
-}
+        </a>
 
+    </div>
 
-.section-heading h2 {
+</section>
 
-    font-size:
-        clamp(36px, 5vw, 54px);
 
-    line-height: 1.1;
 
-    margin-bottom: 18px;
+<!-- =====================================================
+     DB BOARD
+===================================================== -->
 
-}
+<section class="service-detail-section">
 
 
-.section-heading h2 span {
+    <div class="service-detail-heading">
 
-    color: var(--gold);
+        <div class="service-detail-icon">
+            ⚡
+        </div>
 
-}
 
+        <div>
 
-.section-heading > p:last-child {
+            <p class="section-label">
+                COMMERCIAL SERVICE
+            </p>
 
-    color: var(--muted);
 
-    max-width: 700px;
+            <h2>
 
-    margin: 0 auto;
+                DB Board &
 
-    font-size: 16px;
+                <span>
+                    Distribution
+                </span>
 
-}
+            </h2>
 
 
-/* =====================================================
-   HERO
-===================================================== */
+            <p>
 
-.hero {
+                Professional DB board and electrical
+                distribution services for commercial
+                properties, including installations
+                and upgrades.
 
-    min-height: 650px;
+            </p>
 
-    padding: 100px 30px;
+        </div>
 
-    display: flex;
+    </div>
 
-    align-items: center;
 
-    justify-content: center;
 
-    text-align: center;
+    <div class="service-photo-grid">
 
-    background:
 
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(245, 180, 0, 0.09),
-            transparent 42%
-        ),
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial DB Board 01</p>
+        </div>
 
-        var(--dark);
 
-}
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial DB Board 02</p>
+        </div>
 
 
-.hero-content {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial DB Board 03</p>
+        </div>
 
-    width: 100%;
 
-    max-width: 900px;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial DB Board 04</p>
+        </div>
 
-    margin: 0 auto;
 
-}
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial DB Board 05</p>
+        </div>
 
 
-.hero h1 {
+    </div>
 
-    color: var(--white);
 
-    font-size:
-        clamp(44px, 7vw, 78px);
 
-    line-height: 1.03;
+    <div class="service-card-buttons">
 
-    margin-bottom: 24px;
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
-}
+            📞 Call Us
 
+        </a>
 
-.hero h1 span {
 
-    display: block;
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    color: var(--gold);
+            Get a Free Quote
 
-}
+        </a>
 
+    </div>
 
-.hero-text {
+</section>
 
-    max-width: 700px;
 
-    margin:
-        0 auto 32px;
 
-    color: var(--text);
+<!-- =====================================================
+     ELECTRICAL REPAIRS
+===================================================== -->
 
-    font-size: 18px;
+<section class="service-detail-section">
 
-}
 
+    <div class="service-detail-heading">
 
-.hero-buttons {
+        <div class="service-detail-icon">
+            🔧
+        </div>
 
-    display: flex;
 
-    justify-content: center;
+        <div>
 
-    align-items: center;
+            <p class="section-label">
+                COMMERCIAL SERVICE
+            </p>
 
-    gap: 12px;
 
-    flex-wrap: wrap;
+            <h2>
 
-}
+                Electrical
 
+                <span>
+                    Repairs
+                </span>
 
-.primary-button,
-.secondary-button {
+            </h2>
 
-    display: inline-flex;
 
-    align-items: center;
+            <p>
 
-    justify-content: center;
+                Assistance with electrical faults,
+                damaged components and electrical
+                problems affecting commercial properties.
 
-    min-width: 165px;
+            </p>
 
-    padding: 13px 22px;
+        </div>
 
-    border-radius: 5px;
+    </div>
 
-    font-weight: 700;
 
-    transition: 0.25s ease;
 
-}
+    <div class="service-photo-grid">
 
 
-.primary-button {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Repair 01</p>
+        </div>
 
-    background: var(--gold);
 
-    color: #000;
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Repair 02</p>
+        </div>
 
-    border:
-        1px solid var(--gold);
 
-}
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Repair 03</p>
+        </div>
 
 
-.primary-button:hover {
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Repair 04</p>
+        </div>
 
-    background: var(--gold-light);
 
-    transform:
-        translateY(-2px);
+        <div class="service-photo-placeholder">
+            <span>📷</span>
+            <p>Commercial Repair 05</p>
+        </div>
 
-}
 
+    </div>
 
-.secondary-button {
 
-    color: #fff;
 
-    border:
-        1px solid #555;
+    <div class="service-card-buttons">
 
-}
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
+            📞 Call Us
 
-.secondary-button:hover {
+        </a>
 
-    color: var(--gold);
 
-    border-color: var(--gold);
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    transform:
-        translateY(-2px);
+            Get a Free Quote
 
-}
+        </a>
 
+    </div>
 
-/* =====================================================
-   ABOUT
-===================================================== */
+</section>
 
-.about {
 
-    max-width: 1250px;
 
-    margin: 0 auto;
+<!-- =====================================================
+     SOLAR INSTALLATION
+===================================================== -->
 
-    padding: 95px 30px;
+<section class="service-detail-section">
 
-    display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    <div class="service-detail-heading">
 
-    gap: 70px;
+        <div class="service-detail-icon">
+            ☀️
+        </div>
 
-    align-items: center;
 
-}
+        <div>
 
+            <p class="section-label">
+                SOLAR SERVICE
+            </p>
 
-.about-image {
 
-    min-height: 390px;
+            <h2>
 
-    display: flex;
+                Solar
 
-    align-items: center;
+                <span>
+                    Installation
+                </span>
 
-    justify-content: center;
+            </h2>
 
-    border:
-        1px solid var(--border);
 
-    border-radius: 8px;
+            <p>
 
-    background:
+                Professional solar installation for
+                commercial properties, including solar
+                panels, batteries and system equipment.
 
-        radial-gradient(
-            circle,
-            rgba(245, 180, 0, 0.14),
-            transparent 55%
-        ),
+            </p>
 
-        var(--dark-2);
+        </div>
 
-    color: var(--gold);
+    </div>
 
-    font-size: 110px;
 
-}
 
+    <div class="single-service-layout">
 
-.about-content {
 
-    max-width: 650px;
+        <div class="service-description-card">
 
-}
+            <h3>
+                Solar Installation
+            </h3>
 
 
-.about h2 {
+            <p>
 
-    font-size:
-        clamp(36px, 5vw, 52px);
+                Installation of commercial solar systems
+                designed around the electrical needs of
+                the property.
 
-    line-height: 1.1;
+            </p>
 
-    margin-bottom: 22px;
+        </div>
 
-}
 
+        <div class="service-photo-placeholder large-placeholder">
 
-.about h2 span {
+            <span>📷</span>
 
-    color: var(--gold);
+            <p>
+                Commercial Solar Installation Image
+            </p>
 
-}
+        </div>
 
+    </div>
 
-.about-content > p:not(.section-label) {
 
-    color: var(--text);
 
-    margin-bottom: 18px;
+    <div class="service-card-buttons">
 
-}
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
+            📞 Call Us
 
-.features {
+        </a>
 
-    display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    gap: 15px;
+            Get a Free Quote
 
-    margin-top: 28px;
+        </a>
 
-}
+    </div>
 
+</section>
 
-.features div {
 
-    display: flex;
 
-    align-items: center;
+<!-- =====================================================
+     SOLAR REPAIR
+===================================================== -->
 
-    gap: 9px;
+<section class="service-detail-section">
 
-    color: #fff;
 
-}
+    <div class="service-detail-heading">
 
+        <div class="service-detail-icon">
+            🔋
+        </div>
 
-.features strong {
 
-    color: var(--gold);
+        <div>
 
-    font-size: 20px;
+            <p class="section-label">
+                SOLAR SERVICE
+            </p>
 
-}
 
+            <h2>
 
-/* =====================================================
-   SERVICES
-===================================================== */
+                Solar System &
 
-.services {
+                <span>
+                    Battery Repair
+                </span>
 
-    padding: 95px 30px;
+            </h2>
 
-    background: #080a0c;
 
-}
+            <p>
 
+                Replacement of faulty solar batteries
+                and faulty system components to restore
+                proper operation.
 
-.service-grid {
+            </p>
 
-    width: 100%;
+        </div>
 
-    max-width: 1150px;
+    </div>
 
-    margin: 0 auto;
 
-    display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    <div class="single-service-layout">
 
-    gap: 22px;
 
-}
+        <div class="service-description-card">
 
+            <h3>
+                Solar Repair
+            </h3>
 
-.service-card {
 
-    background: var(--card);
+            <p>
 
-    border:
-        1px solid var(--border);
+                Replacement of faulty batteries and
+                faulty solar system components.
 
-    border-radius: 8px;
+            </p>
 
-    padding: 30px;
 
-    transition:
+            <p>
 
-        transform 0.25s ease,
+                This service is focused specifically
+                on replacing faulty batteries and
+                system components.
 
-        border-color 0.25s ease,
+            </p>
 
-        background 0.25s ease;
+        </div>
 
-}
 
+        <div class="service-photo-placeholder large-placeholder">
 
-.service-card:hover {
+            <span>📷</span>
 
-    transform:
-        translateY(-5px);
+            <p>
+                Commercial Solar Repair Image
+            </p>
 
-    border-color:
-        var(--gold);
+        </div>
 
-    background: #181a1c;
+    </div>
 
-}
 
 
-.service-icon {
+    <div class="service-card-buttons">
 
-    font-size: 38px;
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
-    margin-bottom: 17px;
+            📞 Call Us
 
-}
+        </a>
 
 
-.service-card h3 {
+        <a href="index.html#contact"
+           class="service-quote-button">
 
-    color: #fff;
+            Get a Free Quote
 
-    font-size: 22px;
+        </a>
 
-    margin-bottom: 12px;
+    </div>
 
-}
+</section>
 
 
-.service-card p {
 
-    color: var(--muted);
+<!-- =====================================================
+     SOLAR CLEANING
+===================================================== -->
 
-    margin-bottom: 18px;
+<section class="service-detail-section">
 
-}
 
+    <div class="service-detail-heading">
 
-.service-button {
+        <div class="service-detail-icon">
+            🧼
+        </div>
 
-    display: inline-flex;
 
-    align-items: center;
+        <div>
 
-    justify-content: center;
+            <p class="section-label">
+                SOLAR SERVICE
+            </p>
 
-    padding: 10px 16px;
 
-    border-radius: 5px;
+            <h2>
 
-    background: #050505;
+                Solar Panel
 
-    border:
-        1px solid #333;
+                <span>
+                    Cleaning
+                </span>
 
-    color: #fff;
+            </h2>
 
-    font-size: 13px;
 
-    font-weight: 700;
+            <p>
 
-    transition: 0.25s ease;
+                Professional cleaning of solar panels
+                to help keep panels clear of dirt, dust
+                and other buildup.
 
-}
+            </p>
 
+        </div>
 
-.service-button:hover {
+    </div>
 
-    background: var(--gold);
 
-    border-color: var(--gold);
 
-    color: #000;
+    <div class="single-service-layout">
 
-}
 
+        <div class="service-description-card">
 
-/* =====================================================
-   CALL + QUOTE BUTTONS
-===================================================== */
+            <h3>
+                Solar Cleaning
+            </h3>
 
-.service-card-buttons {
 
-    display: flex;
+            <p>
 
-    align-items: center;
+                Cleaning solar panels to help maintain
+                their condition and efficient operation.
 
-    justify-content: center;
+            </p>
 
-    gap: 9px;
+        </div>
 
-    margin-top: 18px;
 
-    flex-wrap: wrap;
+        <div class="service-photo-placeholder large-placeholder">
 
-}
+            <span>📷</span>
 
+            <p>
+                Commercial Solar Cleaning Image
+            </p>
 
-.service-call-button,
-.service-quote-button {
+        </div>
 
-    display: inline-flex;
+    </div>
 
-    align-items: center;
 
-    justify-content: center;
 
-    padding: 10px 14px;
+    <div class="service-card-buttons">
 
-    border-radius: 5px;
+        <a href="tel:+27687250922"
+           class="service-call-button">
 
-    font-size: 12px;
+            📞 Call Us
 
-    font-weight: 700;
+        </a>
 
-    transition: 0.25s ease;
 
-}
+        <a href="index.html#contact"
+           class="service-quote-button">
 
+            Get a Free Quote
 
-.service-call-button {
+        </a>
 
-    color: var(--gold);
+    </div>
 
-    border:
-        1px solid var(--gold);
+</section>
 
-    background: transparent;
 
-}
 
+<!-- =====================================================
+     COMMERCIAL CTA
+===================================================== -->
 
-.service-call-button:hover {
+<section class="service-cta">
 
-    background: var(--gold);
 
-    color: #000;
+    <p class="section-label">
+        COMMERCIAL ELECTRICAL SERVICES
+    </p>
 
-}
 
+    <h2>
 
-.service-quote-button {
+        Keep your business
 
-    background: var(--gold);
+        <span>
+            powered and running.
+        </span>
 
-    border:
-        1px solid var(--gold);
+    </h2>
 
-    color: #000;
 
-}
+    <p>
 
+        Contact MSK Electrician to discuss your
+        commercial electrical requirements or
+        request a quotation.
 
-.service-quote-button:hover {
+    </p>
 
-    background: var(--gold-light);
 
-    transform:
-        translateY(-2px);
+    <div class="hero-buttons">
 
-}
+        <a href="index.html#contact"
+           class="primary-button">
 
+            Get a Free Quote
 
-/* =====================================================
-   WHY US
-===================================================== */
+        </a>
 
-.why-us {
 
-    max-width: 1250px;
+        <a href="tel:+27687250922"
+           class="secondary-button">
 
-    margin: 0 auto;
+            📞 Call Us
 
-    padding: 95px 30px;
+        </a>
 
-    display: grid;
+    </div>
 
-    grid-template-columns:
-        0.75fr 1.25fr;
+</section>
 
-    gap: 65px;
 
-    align-items: center;
+</main>
 
-}
 
 
-.why-us h2 {
+<footer>
 
-    font-size:
-        clamp(38px, 5vw, 54px);
+    <p>
+        © 2026 MSK Electrician. All rights reserved.
+    </p>
 
-    line-height: 1.05;
+</footer>
 
-}
 
+</body>
 
-.why-us h2 span {
-
-    color: var(--gold);
-
-}
-
-
-.why-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-}
-
-
-.why-grid > div {
-
-    padding: 25px;
-
-    background: var(--dark-2);
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 7px;
-
-}
-
-
-.why-grid h3 {
-
-    color: var(--gold);
-
-    font-size: 19px;
-
-}
-
-
-.why-grid h4 {
-
-    color: #fff;
-
-    font-size: 19px;
-
-    margin: 7px 0;
-
-}
-
-
-.why-grid p {
-
-    color: var(--muted);
-
-    font-size: 14px;
-
-}
-
-
-/* =====================================================
-   SERVICE HERO
-===================================================== */
-
-.service-hero {
-
-    min-height: 500px;
-
-    padding: 90px 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(245, 180, 0, 0.08),
-            transparent 45%
-        ),
-
-        var(--dark);
-
-}
-
-
-.service-hero-content {
-
-    width: 100%;
-
-    max-width: 850px;
-
-    margin: 0 auto;
-
-}
-
-
-.service-hero h1 {
-
-    font-size:
-        clamp(42px, 6vw, 70px);
-
-    line-height: 1.05;
-
-    margin-bottom: 20px;
-
-}
-
-
-.service-hero h1 span {
-
-    color: var(--gold);
-
-}
-
-
-.service-hero-content >
-p:not(.section-label) {
-
-    max-width: 700px;
-
-    margin:
-        0 auto 28px;
-
-    color: var(--text);
-
-    font-size: 17px;
-
-}
-
-
-/* =====================================================
-   SERVICE DETAIL
-===================================================== */
-
-.service-detail-section {
-
-    width: 100%;
-
-    max-width: 1250px;
-
-    margin: 0 auto;
-
-    padding: 85px 30px;
-
-}
-
-
-.service-detail-heading {
-
-    max-width: 850px;
-
-    margin:
-        0 auto 40px;
-
-    text-align: center;
-
-}
-
-
-.service-detail-heading h2 {
-
-    color: #fff;
-
-    font-size:
-        clamp(34px, 5vw, 52px);
-
-    line-height: 1.1;
-
-    margin-bottom: 18px;
-
-}
-
-
-.service-detail-heading h2 span {
-
-    color: var(--gold);
-
-}
-
-
-.service-detail-heading >
-p:last-child {
-
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    color: var(--muted);
-
-    font-size: 16px;
-
-}
-
-
-/* =====================================================
-   LIGHTING PHOTO GRID
-===================================================== */
-
-.service-photo-grid {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-}
-
-
-.service-photo-placeholder {
-
-    position: relative;
-
-    min-height: 260px;
-
-    overflow: hidden;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 7px;
-
-    background: var(--dark-2);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: flex-end;
-
-    text-align: center;
-
-    color: #fff;
-
-}
-
-
-.service-photo-placeholder img {
-
-    width: 100%;
-
-    height: 260px;
-
-    object-fit: cover;
-
-    display: block;
-
-}
-
-
-.service-photo-placeholder span {
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    font-size: 42px;
-
-    color: #777;
-
-}
-
-
-.service-photo-placeholder p {
-
-    width: 100%;
-
-    padding: 13px 15px;
-
-    background:
-        rgba(5, 5, 5, 0.94);
-
-    color: #fff;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    text-align: left;
-
-}
-
-
-/* =====================================================
-   SERVICE CTA
-===================================================== */
-
-.service-cta {
-
-    padding: 90px 30px;
-
-    background: #050505;
-
-    color: #fff;
-
-    text-align: center;
-
-}
-
-
-.service-cta h2 {
-
-    font-size:
-        clamp(38px, 5vw, 54px);
-
-    line-height: 1.05;
-
-    margin-bottom: 18px;
-
-}
-
-
-.service-cta h2 span {
-
-    color: var(--gold);
-
-}
-
-
-.service-cta >
-p:not(.section-label) {
-
-    max-width: 650px;
-
-    margin:
-        0 auto 28px;
-
-    color: var(--text);
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    min-height: 90px;
-
-    padding: 25px 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #000;
-
-    border-top:
-        1px solid #202020;
-
-    text-align: center;
-
-}
-
-
-footer p {
-
-    color: #777;
-
-    font-size: 13px;
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-
-    .navbar {
-
-        padding: 0 20px;
-
-        gap: 18px;
-
-    }
-
-
-    .nav-links {
-
-        gap: 20px;
-
-    }
-
-
-    .nav-phone {
-
-        font-size: 12px;
-
-    }
-
-
-    .service-photo-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .why-us {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 800px) {
-
-
-    .navbar {
-
-        min-height: 70px;
-
-    }
-
-
-    .nav-logo {
-
-        width: 90px;
-
-        height: 50px;
-
-    }
-
-
-    .nav-links {
-
-        gap: 12px;
-
-    }
-
-
-    .nav-links a {
-
-        font-size: 11px;
-
-    }
-
-
-    .nav-phone {
-
-        display: none;
-
-    }
-
-
-    .nav-button {
-
-        padding:
-            9px 12px;
-
-        font-size: 11px;
-
-    }
-
-
-    .about {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-    }
-
-
-    .about-content {
-
-        max-width: none;
-
-    }
-
-
-    .service-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .why-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 600px) {
-
-
-    html {
-
-        scroll-padding-top: 70px;
-
-    }
-
-
-    .navbar {
-
-        min-height: 68px;
-
-        padding: 0 12px;
-
-        gap: 10px;
-
-    }
-
-
-    .nav-logo {
-
-        width: 78px;
-
-        height: 45px;
-
-    }
-
-
-    .nav-links {
-
-        gap: 9px;
-
-        margin-left: 0;
-
-    }
-
-
-    .nav-links a {
-
-        font-size: 9px;
-
-    }
-
-
-    .nav-links a::after {
-
-        display: none;
-
-    }
-
-
-    .nav-button {
-
-        display: none;
-
-    }
-
-
-    .hero {
-
-        min-height: 560px;
-
-        padding: 75px 20px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 42px;
-
-    }
-
-
-    .hero-text {
-
-        font-size: 16px;
-
-    }
-
-
-    .about,
-    .services,
-    .why-us,
-    .service-detail-section {
-
-        padding:
-            65px 20px;
-
-    }
-
-
-    .service-hero {
-
-        min-height: 480px;
-
-        padding: 70px 20px;
-
-    }
-
-
-    .service-photo-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-
-    }
-
-
-    .service-photo-placeholder,
-    .service-photo-placeholder img {
-
-        height: 250px;
-
-        min-height: 250px;
-
-    }
-
-
-    .features {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .service-card-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-
-    .service-call-button,
-    .service-quote-button {
-
-        width: 100%;
-
-    }
-
-
-    .primary-button,
-    .secondary-button {
-
-        width: 100%;
-
-        max-width: 280px;
-
-    }
-
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-    }
-
-
-    .nav-phone {
-
-        display: none;
-
-    }
-
-}
+</html>
