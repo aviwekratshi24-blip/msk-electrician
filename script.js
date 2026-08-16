@@ -1,13 +1,13 @@
-// ==========================================
-// MSK ELECTRICIAN WEBSITE
-// ==========================================
+// =====================================================
+// MSK ELECTRICIAN
+// =====================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    // ==========================================
+    // =================================================
     // SERVICE CARD ANIMATION
-    // ==========================================
+    // =================================================
 
     const cards =
         document.querySelectorAll(".service-card");
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 },
                 {
-                    threshold: 0.15
+                    threshold: 0.12
                 }
             );
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.opacity = "0";
 
             card.style.transform =
-                "translateY(30px)";
+                "translateY(25px)";
 
             card.style.transition =
                 "opacity 0.6s ease, transform 0.6s ease";
@@ -69,18 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
-    // ==========================================
+    // =================================================
     // STAR RATING
-    // ==========================================
+    // =================================================
 
     const stars =
         document.querySelectorAll(".rating-star");
 
-
     const ratingInput =
         document.getElementById("rating");
-
 
     const ratingText =
         document.getElementById("rating-text");
@@ -107,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "We're glad you had a great experience with our service."
 
     };
-
 
 
     function updateStars(rating) {
@@ -137,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     function setRating(rating) {
 
         selectedRating = rating;
@@ -163,21 +158,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
-    // ==========================================
-    // STAR CLICK
-    // ==========================================
-
     stars.forEach(function (star) {
 
         star.addEventListener(
             "click",
             function () {
 
-                const rating =
-                    Number(this.dataset.rating);
-
-                setRating(rating);
+                setRating(
+                    Number(this.dataset.rating)
+                );
 
             }
         );
@@ -187,21 +176,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "mouseenter",
             function () {
 
-                const rating =
-                    Number(this.dataset.rating);
-
-                updateStars(rating);
+                updateStars(
+                    Number(this.dataset.rating)
+                );
 
             }
         );
 
     });
 
-
-
-    // ==========================================
-    // RESTORE SELECTED RATING
-    // ==========================================
 
     const starContainer =
         document.querySelector(".rating-stars");
@@ -221,10 +204,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
-    // ==========================================
+    // =================================================
     // REVIEW FORM
-    // ==========================================
+    // =================================================
 
     const reviewForm =
         document.getElementById("review-form");
@@ -249,9 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         ratingText.textContent =
                             "Please select a star rating.";
-
-                        ratingText.style.color =
-                            "#d9534f";
 
                     }
 
@@ -298,16 +277,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 reviewForm.reset();
 
-
                 selectedRating = 0;
-
 
                 if (ratingInput) {
 
                     ratingInput.value = "";
 
                 }
-
 
                 updateStars(0);
 
@@ -316,9 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     ratingText.textContent =
                         "Thank you for sharing your experience.";
-
-                    ratingText.style.color =
-                        "#777777";
 
                 }
 
@@ -339,47 +312,5 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
-
-
-    // ==========================================
-    // SMOOTH NAVIGATION
-    // ==========================================
-
-    const navLinks =
-        document.querySelectorAll(
-            '.nav-links a[href^="#"]'
-        );
-
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                const targetId =
-                    this.getAttribute("href");
-
-
-                const target =
-                    document.querySelector(targetId);
-
-
-                if (target) {
-
-                    target.scrollIntoView({
-
-                        behavior: "smooth"
-
-                    });
-
-                }
-
-            }
-        );
-
-    });
-
 
 });
