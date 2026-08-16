@@ -4,42 +4,52 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+
     // ==========================================
     // SERVICE CARD ANIMATION
     // ==========================================
 
-    const cards = document.querySelectorAll(".service-card");
+    const cards =
+        document.querySelectorAll(".service-card");
+
 
     if ("IntersectionObserver" in window) {
 
-        const observer = new IntersectionObserver(
-            function (entries) {
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
 
-                entries.forEach(function (entry) {
+                    entries.forEach(function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (entry.isIntersecting) {
 
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
+                            entry.target.style.opacity = "1";
 
-                        observer.unobserve(entry.target);
+                            entry.target.style.transform =
+                                "translateY(0)";
 
-                    }
+                            observer.unobserve(entry.target);
 
-                });
+                        }
 
-            },
-            {
-                threshold: 0.15
-            }
-        );
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
 
         cards.forEach(function (card) {
 
             card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
+
+            card.style.transform =
+                "translateY(30px)";
+
             card.style.transition =
-                "opacity 0.6s ease, transform 0.3s ease";
+                "opacity 0.6s ease, transform 0.6s ease";
 
             observer.observe(card);
 
@@ -50,112 +60,286 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.forEach(function (card) {
 
             card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
+
+            card.style.transform =
+                "translateY(0)";
 
         });
 
     }
 
 
+
     // ==========================================
-    // LIGHTING PHOTO FULL-SCREEN VIEWER
+    // STAR RATING
     // ==========================================
 
-    const serviceImages =
-        document.querySelectorAll(".service-photo-placeholder img");
-
-    if (serviceImages.length > 0) {
-
-        // Create full-screen viewer
-
-        const viewer = document.createElement("div");
-
-        viewer.className = "photo-viewer";
-
-        viewer.innerHTML = `
-            <button class="photo-viewer-close" aria-label="Close">
-                ×
-            </button>
-
-            <img class="photo-viewer-image" src="" alt="">
-        `;
-
-        document.body.appendChild(viewer);
+    const stars =
+        document.querySelectorAll(".rating-star");
 
 
-        const viewerImage =
-            viewer.querySelector(".photo-viewer-image");
-
-        const closeButton =
-            viewer.querySelector(".photo-viewer-close");
+    const ratingInput =
+        document.getElementById("rating");
 
 
-        // Open image
-
-        serviceImages.forEach(function (image) {
-
-            image.style.cursor = "pointer";
-
-            image.addEventListener("click", function () {
-
-                viewerImage.src = this.src;
-                viewerImage.alt = this.alt;
-
-                viewer.classList.add("show");
-
-                document.body.style.overflow = "hidden";
-
-            });
-
-        });
+    const ratingText =
+        document.getElementById("rating-text");
 
 
-        // Close button
-
-        closeButton.addEventListener("click", function () {
-
-            closePhotoViewer();
-
-        });
+    let selectedRating = 0;
 
 
-        // Click outside image to close
+    const ratingMessages = {
 
-        viewer.addEventListener("click", function (event) {
+        1:
+            "Thank you for sharing your honest feedback.",
 
-            if (event.target === viewer) {
+        2:
+            "Thank you for taking the time to respond.",
 
-                closePhotoViewer();
+        3:
+            "Thank you for sharing your experience.",
+
+        4:
+            "We're glad to hear that your experience was positive.",
+
+        5:
+            "We're glad you had a great experience with our service."
+
+    };
+
+
+
+    function updateStars(rating) {
+
+        stars.forEach(function (star) {
+
+            const starRating =
+                Number(star.dataset.rating);
+
+
+            if (starRating <= rating) {
+
+                star.classList.add("active");
+
+                star.textContent = "★";
+
+            } else {
+
+                star.classList.remove("active");
+
+                star.textContent = "☆";
 
             }
 
         });
 
-
-        // ESC key closes image
-
-        document.addEventListener("keydown", function (event) {
-
-            if (event.key === "Escape") {
-
-                closePhotoViewer();
-
-            }
-
-        });
+    }
 
 
-        function closePhotoViewer() {
 
-            viewer.classList.remove("show");
+    function setRating(rating) {
 
-            document.body.style.overflow = "";
+        selectedRating = rating;
 
-            viewerImage.src = "";
+
+        if (ratingInput) {
+
+            ratingInput.value = rating;
+
+        }
+
+
+        updateStars(rating);
+
+
+        if (ratingText) {
+
+            ratingText.textContent =
+                ratingMessages[rating] || "";
 
         }
 
     }
+
+
+
+    // ==========================================
+    // STAR CLICK
+    // ==========================================
+
+    stars.forEach(function (star) {
+
+        star.addEventListener(
+            "click",
+            function () {
+
+                const rating =
+                    Number(this.dataset.rating);
+
+                setRating(rating);
+
+            }
+        );
+
+
+        star.addEventListener(
+            "mouseenter",
+            function () {
+
+                const rating =
+                    Number(this.dataset.rating);
+
+                updateStars(rating);
+
+            }
+        );
+
+    });
+
+
+
+    // ==========================================
+    // RESTORE SELECTED RATING
+    // ==========================================
+
+    const starContainer =
+        document.querySelector(".rating-stars");
+
+
+    if (starContainer) {
+
+        starContainer.addEventListener(
+            "mouseleave",
+            function () {
+
+                updateStars(selectedRating);
+
+            }
+        );
+
+    }
+
+
+
+    // ==========================================
+    // REVIEW FORM
+    // ==========================================
+
+    const reviewForm =
+        document.getElementById("review-form");
+
+
+    const successMessage =
+        document.getElementById("review-success");
+
+
+    if (reviewForm) {
+
+        reviewForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (selectedRating === 0) {
+
+                    if (ratingText) {
+
+                        ratingText.textContent =
+                            "Please select a star rating.";
+
+                        ratingText.style.color =
+                            "#d9534f";
+
+                    }
+
+                    return;
+
+                }
+
+
+                const feedback =
+                    document.getElementById(
+                        "review-feedback"
+                    );
+
+
+                if (
+                    !feedback ||
+                    feedback.value.trim() === ""
+                ) {
+
+                    if (feedback) {
+
+                        feedback.focus();
+
+                        feedback.style.borderColor =
+                            "#d9534f";
+
+                    }
+
+                    return;
+
+                }
+
+
+                feedback.style.borderColor =
+                    "#dddddd";
+
+
+                if (successMessage) {
+
+                    successMessage.classList.add("show");
+
+                }
+
+
+                reviewForm.reset();
+
+
+                selectedRating = 0;
+
+
+                if (ratingInput) {
+
+                    ratingInput.value = "";
+
+                }
+
+
+                updateStars(0);
+
+
+                if (ratingText) {
+
+                    ratingText.textContent =
+                        "Thank you for sharing your experience.";
+
+                    ratingText.style.color =
+                        "#777777";
+
+                }
+
+
+                setTimeout(function () {
+
+                    if (successMessage) {
+
+                        successMessage.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                }, 5000);
+
+            }
+        );
+
+    }
+
 
 
     // ==========================================
@@ -170,59 +354,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(function (link) {
 
-        link.addEventListener("click", function (event) {
+        link.addEventListener(
+            "click",
+            function () {
 
-            const targetId =
-                this.getAttribute("href");
-
-            const target =
-                document.querySelector(targetId);
+                const targetId =
+                    this.getAttribute("href");
 
 
-            if (target) {
+                const target =
+                    document.querySelector(targetId);
 
-                event.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
+                if (target) {
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth"
+
+                    });
+
+                }
 
             }
-
-        });
-
-    });
-
-
-    // ==========================================
-    // GET A QUOTE BUTTONS
-    // ==========================================
-
-    const quoteButtons =
-        document.querySelectorAll(
-            'a[href="#contact"]'
         );
 
-
-    quoteButtons.forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-
-            const contactSection =
-                document.querySelector("#contact");
-
-            if (contactSection) {
-
-                event.preventDefault();
-
-                contactSection.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
-
-        });
-
     });
+
 
 });
