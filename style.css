@@ -1382,3 +1382,45 @@ footer p {
     }
 
 }
+
+/* =====================================================
+   HIGH QUALITY WEBSITE IMAGES
+===================================================== */
+
+.service-photo-placeholder {
+    overflow: hidden;
+}
+
+.service-photo-placeholder img {
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    /* Keep the image as sharp as possible */
+    image-rendering: auto;
+
+    display: block;
+}
+
+/* Don't artificially enlarge small images */
+.service-photo-placeholder img {
+    max-width: 100%;
+}
+
+
+/* LIGHTBOX IMAGE */
+
+.photo-viewer-image {
+    max-width: 92vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    image-rendering: auto;
+
+    display: block;
+}
