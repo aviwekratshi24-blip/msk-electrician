@@ -314,3 +314,169 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// ==========================================
+// LIGHTING PHOTO VIEWER
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const photos = document.querySelectorAll(
+        ".service-photo-grid img"
+    );
+
+    if (!photos.length) return;
+
+    let currentPhoto = 0;
+
+    // Create viewer
+    const viewer = document.createElement("div");
+
+    viewer.className = "photo-viewer";
+
+    viewer.innerHTML = `
+        <button class="photo-close" aria-label="Close">
+            ×
+        </button>
+
+        <button class="photo-prev" aria-label="Previous photo">
+            ‹
+        </button>
+
+        <img class="photo-viewer-image" src="" alt="">
+
+        <button class="photo-next" aria-label="Next photo">
+            ›
+        </button>
+    `;
+
+    document.body.appendChild(viewer);
+
+
+    const viewerImage =
+        viewer.querySelector(".photo-viewer-image");
+
+    const closeButton =
+        viewer.querySelector(".photo-close");
+
+    const previousButton =
+        viewer.querySelector(".photo-prev");
+
+    const nextButton =
+        viewer.querySelector(".photo-next");
+
+
+    // Show selected photo
+    function showPhoto(index) {
+
+        if (index < 0) {
+            index = photos.length - 1;
+        }
+
+        if (index >= photos.length) {
+            index = 0;
+        }
+
+        currentPhoto = index;
+
+        viewerImage.src =
+            photos[currentPhoto].src;
+
+        viewerImage.alt =
+            photos[currentPhoto].alt;
+
+        viewer.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    // Open photo
+    photos.forEach(function (photo, index) {
+
+        photo.style.cursor = "pointer";
+
+        photo.addEventListener("click", function () {
+
+            showPhoto(index);
+
+        });
+
+    });
+
+
+    // Previous
+    previousButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        showPhoto(currentPhoto - 1);
+
+    });
+
+
+    // Next
+    nextButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        showPhoto(currentPhoto + 1);
+
+    });
+
+
+    // Close
+    closeButton.addEventListener("click", function () {
+
+        viewer.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    });
+
+
+    // Click outside image to close
+    viewer.addEventListener("click", function (event) {
+
+        if (event.target === viewer) {
+
+            viewer.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+
+    // Keyboard controls
+    document.addEventListener("keydown", function (event) {
+
+        if (!viewer.classList.contains("show")) return;
+
+
+        if (event.key === "ArrowRight") {
+
+            showPhoto(currentPhoto + 1);
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            showPhoto(currentPhoto - 1);
+
+        }
+
+
+        if (event.key === "Escape") {
+
+            viewer.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+});
