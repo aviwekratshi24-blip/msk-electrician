@@ -776,81 +776,97 @@ section {
     max-width: 800px;
 }
 
-
 /* =====================================================
-   PHOTO GRID
+   ALL SERVICE PHOTOS — SMALL ONE ROW
 ===================================================== */
 
 .service-photo-grid {
+
     width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 10px;
 
-    margin-top: 25px;
 }
 
 
 .service-photo-placeholder {
+
     position: relative;
 
-    min-height: 210px;
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
 
     overflow: hidden;
 
-    background: var(--light);
+    border: 1px solid var(--border);
 
-    border: 2px dashed #dddddd;
+    border-radius: 6px;
 
-    border-radius: 8px;
+    background: var(--dark-2);
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    color: #999999;
 }
 
 
 .service-photo-placeholder img {
+
     width: 100%;
-    height: 210px;
+    height: 100%;
 
     object-fit: cover;
 
     display: block;
+
 }
 
 
 .service-photo-placeholder span {
-    font-size: 40px;
 
-    margin-bottom: 8px;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 28px;
+
+    color: #777;
+
 }
 
 
 .service-photo-placeholder p {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
     width: 100%;
 
-    padding: 10px;
+    margin: 0;
 
-    background: rgba(255,255,255,0.95);
+    padding: 5px 3px;
 
-    color: #555555;
+    background: rgba(0, 0, 0, 0.80);
 
-    font-size: 13px;
+    color: #fff;
+
+    font-size: 10px;
 
     font-weight: 700;
-}
 
+    text-align: center;
+
+}
 
 /* =====================================================
    COC
