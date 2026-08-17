@@ -713,25 +713,17 @@ section {
 
 .service-detail-section {
     width: 100%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 75px 30px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 30px;
 }
-
 
 .service-detail-heading {
     display: flex;
-
     align-items: flex-start;
-
     gap: 22px;
-
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
-
 
 .service-detail-icon {
     width: 62px;
