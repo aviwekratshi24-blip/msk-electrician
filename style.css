@@ -1538,3 +1538,21 @@ footer p {
     height: 140px !important;
     object-fit: cover !important;
 }
+
+/* FORCE ALL RESIDENTIAL SERVICE PHOTOS SMALL */
+
+.service-photo-grid .service-photo-placeholder {
+    width: 100% !important;
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+}
+
+.service-photo-grid .service-photo-placeholder img {
+    width: 100% !important;
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
