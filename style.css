@@ -1523,3 +1523,18 @@ footer p {
     }
 
 }
+
+/* THREE NEW LIGHTING PHOTOS */
+
+.new-lighting-photo {
+    width: 100%;
+    height: 140px !important;
+    min-height: 140px !important;
+    overflow: hidden;
+}
+
+.new-lighting-photo img {
+    width: 100% !important;
+    height: 140px !important;
+    object-fit: cover !important;
+}
